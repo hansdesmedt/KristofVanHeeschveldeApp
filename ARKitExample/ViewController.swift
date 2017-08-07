@@ -244,7 +244,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		if virtualObject == nil {
-			chooseObject(addObjectButton)
+//      chooseObject(addObjectButton)
 			return
 		}
 		
@@ -401,13 +401,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 		virtualObject?.removeFromParentNode()
 		virtualObject = nil
 		
-        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
-		
+//        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
+//        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+    
 		// Reset selected object id for row highlighting in object selection view controller.
 		UserDefaults.standard.set(-1, for: .selectedObjectID)
-        
-        loadVirtualObject(at: 0)
 	}
 	
 	func updateVirtualObjectPosition(_ pos: SCNVector3, _ filterPosition: Bool) {
@@ -490,9 +488,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	var isLoadingObject: Bool = false {
 		didSet {
 			DispatchQueue.main.async {
-				self.settingsButton.isEnabled = !self.isLoadingObject
-				self.addObjectButton.isEnabled = !self.isLoadingObject
-				self.screenshotButton.isEnabled = !self.isLoadingObject
+//        self.settingsButton.isEnabled = !self.isLoadingObject
+//        self.addObjectButton.isEnabled = !self.isLoadingObject
+//        self.screenshotButton.isEnabled = !self.isLoadingObject
 				self.restartExperienceButton.isEnabled = !self.isLoadingObject
 			}
 		}
@@ -501,16 +499,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	@IBOutlet weak var addObjectButton: UIButton!
 	
 	func loadVirtualObject(at index: Int) {
-//        resetVirtualObject()
+        resetVirtualObject()
         
 		// Show progress indicator
-		let spinner = UIActivityIndicatorView()
-		spinner.center = addObjectButton.center
-		spinner.bounds.size = CGSize(width: addObjectButton.bounds.width - 5, height: addObjectButton.bounds.height - 5)
-		addObjectButton.setImage(#imageLiteral(resourceName: "buttonring"), for: [])
-		sceneView.addSubview(spinner)
-		spinner.startAnimating()
-		
+//    let spinner = UIActivityIndicatorView()
+//    spinner.center = addObjectButton.center
+//    spinner.bounds.size = CGSize(width: addObjectButton.bounds.width - 5, height: addObjectButton.bounds.height - 5)
+//    addObjectButton.setImage(#imageLiteral(resourceName: "buttonring"), for: [])
+//    sceneView.addSubview(spinner)
+//    spinner.startAnimating()
+    
 		// Load the content asynchronously.
 		DispatchQueue.global().async {
 			self.isLoadingObject = true
@@ -529,13 +527,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 				}
 				
 				// Remove progress indicator
-				spinner.removeFromSuperview()
-				
+//        spinner.removeFromSuperview()
+        
 				// Update the icon of the add object button
-				let buttonImage = UIImage.composeButtonImage(from: object.thumbImage)
-				let pressedButtonImage = UIImage.composeButtonImage(from: object.thumbImage, alpha: 0.3)
-				self.addObjectButton.setImage(buttonImage, for: [])
-				self.addObjectButton.setImage(pressedButtonImage, for: [.highlighted])
+//        let buttonImage = UIImage.composeButtonImage(from: object.thumbImage)
+//        let pressedButtonImage = UIImage.composeButtonImage(from: object.thumbImage, alpha: 0.3)
+//        self.addObjectButton.setImage(buttonImage, for: [])
+//        self.addObjectButton.setImage(pressedButtonImage, for: [.highlighted])
 				self.isLoadingObject = false
 			}
 		}

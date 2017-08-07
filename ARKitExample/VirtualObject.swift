@@ -89,7 +89,9 @@ extension VirtualObject {
 	}
 	
 	static let availableObjects: [VirtualObject] = [
-		Kristof(),
+		Box(),
+    Circle(),
+    Text()
 	]
 }
 

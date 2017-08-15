@@ -12,11 +12,11 @@ private let reuseIdentifier = "Cell"
 
 class VirtualObjectCollectionViewController: UICollectionViewController {
   
-  //    override func viewDidLoad() {
-  //        super.viewDidLoad()
-  //        collectionView?.contentInset.left = UIScreen.main.bounds.width / 2.0
-  //        collectionView?.contentInset.right = UIScreen.main.bounds.width / 2.0
-  //    }
+  weak var viewController: ViewController?
+  
+  var layout: VirtualObjectCollectionViewFlowLayout? {
+    return (collectionView?.collectionViewLayout as? VirtualObjectCollectionViewFlowLayout)
+  }
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -37,5 +37,36 @@ class VirtualObjectCollectionViewController: UICollectionViewController {
     
     // Configure the cell
     return cell
+  }
+  
+  //loadVirtualObject(at: index)
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if indexPath.item == layout?.centerItemIndex {
+      //take picture
+      viewController?.takeScreenshot()
+    } else {
+      scrollToIndexPath(indexPath)
+    }
+  }
+  
+  func scrollToIndexPath(_ indexPath: IndexPath, animated: Bool = true) {
+    collectionView?.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: animated)
+    layout?.centerItemIndex = indexPath.item
+  }
+}
+
+extension VirtualObjectCollectionViewController {
+  
+  override func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    if let centerIndex = layout?.centerItemIndex {
+      viewController?.loadVirtualObject(at: centerIndex)
+    }
+  }
+  
+  override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if let centerIndex = layout?.centerItemIndex {
+      viewController?.loadVirtualObject(at: centerIndex)
+    }
   }
 }

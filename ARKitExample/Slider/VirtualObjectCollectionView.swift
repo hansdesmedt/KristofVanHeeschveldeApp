@@ -17,5 +17,5 @@ class VirtualObjectCollectionView: UICollectionView {
         // Drawing code
     }
     */
-
+  
 }

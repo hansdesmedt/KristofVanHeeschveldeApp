@@ -13,7 +13,7 @@ class VirtualObjectCollectionViewFlowLayoutHorizontal: VirtualObjectCollectionVi
     let itemAspectRatio: CGFloat = 1
     
     override var minimumLineSpacing: CGFloat {
-        return 20
+        return 5
     }
     
     override var itemSize: CGSize {

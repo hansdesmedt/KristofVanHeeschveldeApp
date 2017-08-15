@@ -24,7 +24,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 		setupFocusSquare()
 		updateSettings()
 		resetVirtualObject()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let virtualObjectCollectionViewController = segue.destination as? VirtualObjectCollectionViewController {
+      virtualObjectCollectionViewController.viewController = self
     }
+  }
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
@@ -43,7 +49,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	
     // MARK: - ARKit / ARSCNView
     let session = ARSession()
-	var sessionConfig: ARSessionConfiguration = ARWorldTrackingSessionConfiguration()
+	var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
 	var use3DOFTracking = false {
 		didSet {
 			if use3DOFTracking {
@@ -539,29 +545,29 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 		}
     }
 	
-	@IBAction func chooseObject(_ button: UIButton) {
-		// Abort if we are about to load another object to avoid concurrent modifications of the scene.
-		if isLoadingObject { return }
-		
-		textManager.cancelScheduledMessage(forType: .contentPlacement)
-		
-		let rowHeight = 45
-		let popoverSize = CGSize(width: 250, height: rowHeight * VirtualObject.availableObjects.count)
-		
-		let objectViewController = VirtualObjectSelectionViewController(size: popoverSize)
-		objectViewController.delegate = self
-		objectViewController.modalPresentationStyle = .popover
-		objectViewController.popoverPresentationController?.delegate = self
-		self.present(objectViewController, animated: true, completion: nil)
-		
-		objectViewController.popoverPresentationController?.sourceView = button
-		objectViewController.popoverPresentationController?.sourceRect = button.bounds
-    }
-	
+//  @IBAction func chooseObject(_ button: UIButton) {
+//    // Abort if we are about to load another object to avoid concurrent modifications of the scene.
+//    if isLoadingObject { return }
+//
+//    textManager.cancelScheduledMessage(forType: .contentPlacement)
+//
+//    let rowHeight = 45
+//    let popoverSize = CGSize(width: 250, height: rowHeight * VirtualObject.availableObjects.count)
+//
+//    let objectViewController = VirtualObjectSelectionViewController(size: popoverSize)
+//    objectViewController.delegate = self
+//    objectViewController.modalPresentationStyle = .popover
+//    objectViewController.popoverPresentationController?.delegate = self
+//    self.present(objectViewController, animated: true, completion: nil)
+//
+//    objectViewController.popoverPresentationController?.sourceView = button
+//    objectViewController.popoverPresentationController?.sourceRect = button.bounds
+//    }
+//
 	// MARK: - VirtualObjectSelectionViewControllerDelegate
 	
 	func virtualObjectSelectionViewController(_: VirtualObjectSelectionViewController, didSelectObjectAt index: Int) {
-		loadVirtualObject(at: index)
+		
 	}
 	
 	func virtualObjectSelectionViewControllerDidDeselectObject(_: VirtualObjectSelectionViewController) {
@@ -676,9 +682,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 			return
 		}
 		
-		DispatchQueue.main.async {
-			self.featurePointCountLabel.text = "Features: \(cloud.count)".uppercased()
-		}
+    DispatchQueue.main.async {
+      self.featurePointCountLabel.text = "Features: \(cloud.__count)".uppercased()
+    }
 	}
 	
     var showDebugVisuals: Bool = UserDefaults.standard.bool(for: .debugMode) {
@@ -757,23 +763,30 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	@IBOutlet weak var screenshotButton: UIButton!
 	
 	@IBAction func takeScreenshot() {
-		guard screenshotButton.isEnabled else {
-			return
-		}
+//    guard screenshotButton.isEnabled else {
+//      return
+//    }
 		
 		let takeScreenshotBlock = {
-			UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
-			DispatchQueue.main.async {
-				// Briefly flash the screen.
-				let flashOverlay = UIView(frame: self.sceneView.frame)
-				flashOverlay.backgroundColor = UIColor.white
-				self.sceneView.addSubview(flashOverlay)
-				UIView.animate(withDuration: 0.25, animations: {
-					flashOverlay.alpha = 0.0
-				}, completion: { _ in
-					flashOverlay.removeFromSuperview()
-				})
-			}
+      if let photoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
+        photoViewController.image = self.sceneView.snapshot()
+        photoViewController.modalPresentationStyle = .fullScreen
+        photoViewController.modalTransitionStyle = .crossDissolve
+        self.present(photoViewController, animated: true, completion: nil)
+      }
+      
+//      
+//      DispatchQueue.main.async {
+//        // Briefly flash the screen.
+//        let flashOverlay = UIView(frame: self.sceneView.frame)
+//        flashOverlay.backgroundColor = UIColor.white
+//        self.sceneView.addSubview(flashOverlay)
+//        UIView.animate(withDuration: 0.25, animations: {
+//          flashOverlay.alpha = 0.0
+//        }, completion: { _ in
+//          flashOverlay.removeFromSuperview()
+//        })
+//      }
 		}
 		
 		switch PHPhotoLibrary.authorizationStatus() {
@@ -862,4 +875,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 	func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
 		updateSettings()
 	}
+  
+  @IBAction func unwindFromPhoto(_ segue: UIStoryboardSegue) {
+    
+  }
+  
+  @IBAction func unwindFromInfo(_ segue: UIStoryboardSegue) {
+    
+  }
 }

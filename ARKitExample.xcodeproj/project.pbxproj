@@ -37,6 +37,7 @@
 		CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E731F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift */; };
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
 		CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */; };
+		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */,
 				CED7C7861F3666A5007A6345 /* Assets.xcassets in Resources */,
 				3929C49F1E89EE4400E00B60 /* Models.scnassets in Resources */,
 				39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */,
@@ -287,11 +289,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

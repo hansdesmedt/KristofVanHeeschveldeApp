@@ -16,6 +16,10 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate, VirtualObjectSelectionViewControllerDelegate {
   
+  @IBOutlet weak var totalSubmitsBorderView: UIView!
+  @IBOutlet weak var timeBorderView: UIView!
+  
+  
   // MARK: - Main Setup & View Controller methods
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -47,6 +51,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     UIApplication.shared.isIdleTimerDisabled = true
     // Start the ARSession.
     restartPlaneDetection()
+    
+    totalSubmitsBorderView.layer.borderWidth = 2
+    totalSubmitsBorderView.layer.borderColor = UIColor.white.cgColor
+    
+    timeBorderView.layer.borderWidth = 2
+    timeBorderView.layer.borderColor = UIColor.white.cgColor
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -515,7 +525,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
         //        self.settingsButton.isEnabled = !self.isLoadingObject
         //        self.addObjectButton.isEnabled = !self.isLoadingObject
         //        self.screenshotButton.isEnabled = !self.isLoadingObject
-        self.restartExperienceButton.isEnabled = !self.isLoadingObject
+//        self.restartExperienceButton.isEnabled = !self.isLoadingObject
       }
     }
   }
@@ -688,7 +698,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   // MARK: - Debug Visualizations
   
-  @IBOutlet var featurePointCountLabel: UILabel!
+//  @IBOutlet var featurePointCountLabel: UILabel!
   
   func refreshFeaturePoints() {
     guard showDebugVisuals else {
@@ -701,15 +711,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
     
     DispatchQueue.main.async {
-      self.featurePointCountLabel.text = "Features: \(cloud.__count)".uppercased()
+//      self.featurePointCountLabel.text = "Features: \(cloud.__count)".uppercased()
     }
   }
   
   var showDebugVisuals: Bool = UserDefaults.standard.bool(for: .debugMode) {
     didSet {
-      featurePointCountLabel.isHidden = !showDebugVisuals
-      debugMessageLabel.isHidden = !showDebugVisuals
-      messagePanel.isHidden = !showDebugVisuals
+//      featurePointCountLabel.isHidden = !showDebugVisuals
+//      debugMessageLabel.isHidden = !showDebugVisuals
+//      messagePanel.isHidden = !showDebugVisuals
       planes.values.forEach { $0.showDebugVisualization(showDebugVisuals) }
       
       if showDebugVisuals {
@@ -725,15 +735,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   func setupDebug() {
     // Set appearance of debug output panel
-    messagePanel.layer.cornerRadius = 3.0
-    messagePanel.clipsToBounds = true
+//    messagePanel.layer.cornerRadius = 3.0
+//    messagePanel.clipsToBounds = true
   }
   
   // MARK: - UI Elements and Actions
   
-  @IBOutlet weak var messagePanel: UIView!
-  @IBOutlet weak var messageLabel: UILabel!
-  @IBOutlet weak var debugMessageLabel: UILabel!
+//  @IBOutlet weak var messagePanel: UIView!
+//  @IBOutlet weak var messageLabel: UILabel!
+//  @IBOutlet weak var debugMessageLabel: UILabel!
   
   var textManager: TextManager!
   
@@ -741,24 +751,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     textManager = TextManager(viewController: self)
     
     // hide debug message view
-    debugMessageLabel.isHidden = true
-    
-    featurePointCountLabel.text = ""
-    debugMessageLabel.text = ""
-    messageLabel.text = ""
+//    debugMessageLabel.isHidden = true
+//
+//    featurePointCountLabel.text = ""
+//    debugMessageLabel.text = ""
+//    messageLabel.text = ""
   }
   
-  @IBOutlet weak var restartExperienceButton: UIButton!
-  var restartExperienceButtonIsEnabled = true
+//  @IBOutlet weak var restartExperienceButton: UIButton!
+//  var restartExperienceButtonIsEnabled = true
   
   @IBAction func restartExperience(_ sender: Any) {
     
-    guard restartExperienceButtonIsEnabled, !isLoadingObject else {
+    guard /*restartExperienceButtonIsEnabled,*/ !isLoadingObject else {
       return
     }
     
     DispatchQueue.main.async {
-      self.restartExperienceButtonIsEnabled = false
+//      self.restartExperienceButtonIsEnabled = false
       
       self.textManager.cancelAllScheduledMessages()
       self.textManager.dismissPresentedAlert()
@@ -769,12 +779,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
       self.resetVirtualObject()
       self.restartPlaneDetection()
       
-      self.restartExperienceButton.setImage(#imageLiteral(resourceName: "restart"), for: [])
+//      self.restartExperienceButton.setImage(#imageLiteral(resourceName: "restart"), for: [])
       
       // Disable Restart button for five seconds in order to give the session enough time to restart.
-      DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-        self.restartExperienceButtonIsEnabled = true
-      })
+//      DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//        self.restartExperienceButtonIsEnabled = true
+//      })
     }
   }
   
@@ -900,5 +910,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   @IBAction func unwindFromInfo(_ segue: UIStoryboardSegue) {
     
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
 }

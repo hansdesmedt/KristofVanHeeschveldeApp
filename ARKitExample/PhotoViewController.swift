@@ -11,6 +11,9 @@ import UIKit
 class PhotoViewController: UIViewController {
 
   @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var saveToDiskButton: UIButton!
+  @IBOutlet weak var facebookDiskButton: UIButton!
+  @IBOutlet weak var submitButton: UIButton!
   var image: UIImage?
   
     override func viewDidLoad() {
@@ -18,6 +21,9 @@ class PhotoViewController: UIViewController {
 
       imageView.image = image
         // Do any additional setup after loading the view.
+      saveToDiskButton.layer.cornerRadius = 25
+      facebookDiskButton.layer.cornerRadius = 25
+      submitButton.layer.cornerRadius = 25
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +36,10 @@ class PhotoViewController: UIViewController {
       UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
       dismiss(animated: true, completion: nil)
     }
+  }
+  
+  override var prefersStatusBarHidden: Bool {
+    return true
   }
   
     /*

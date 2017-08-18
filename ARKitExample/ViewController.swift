@@ -16,8 +16,8 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate, VirtualObjectSelectionViewControllerDelegate {
   
-  @IBOutlet weak var totalSubmitsBorderView: UIView!
-  @IBOutlet weak var timeBorderView: UIView!
+//  @IBOutlet weak var totalSubmitsBorderView: UIView!
+//  @IBOutlet weak var timeBorderView: UIView!
   
   
   // MARK: - Main Setup & View Controller methods
@@ -52,11 +52,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     // Start the ARSession.
     restartPlaneDetection()
     
-    totalSubmitsBorderView.layer.borderWidth = 2
-    totalSubmitsBorderView.layer.borderColor = UIColor.white.cgColor
+//    totalSubmitsBorderView.layer.borderWidth = 2
+//    totalSubmitsBorderView.layer.borderColor = UIColor.white.cgColor
+//
+//    timeBorderView.layer.borderWidth = 2
+//    timeBorderView.layer.borderColor = UIColor.white.cgColor
     
-    timeBorderView.layer.borderWidth = 2
-    timeBorderView.layer.borderColor = UIColor.white.cgColor
+
+  }
+  
+  @IBAction func onboardingPressed(_ sender: UIButton) {
+    performSegue(withIdentifier: "OnboardingViewController", sender: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

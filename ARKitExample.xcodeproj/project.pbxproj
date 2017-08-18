@@ -26,6 +26,7 @@
 		C4E87DD91EA6B40F002117D6 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */; };
 		C4FBC02B1EC6438B003F7864 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
+		CE970C5D1F4642CD0093F9D9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE970C5C1F4642CD0093F9D9 /* OnboardingViewController.swift */; };
 		CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC0D051F365550009D507E /* VirtualObjectCollectionViewCell.swift */; };
 		CEBC515F1F41FF6800CAA7C1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */; };
 		CEDCCDA31F3512EF00FA84DE /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCDA21F3512EF00FA84DE /* Circle.swift */; };
@@ -38,6 +39,10 @@
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
 		CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */; };
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
+		CEF698B91F460FD00017B0E7 /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698B81F460FD00017B0E7 /* Onboarding1ViewController.swift */; };
+		CEF698BB1F460FF30017B0E7 /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BA1F460FF30017B0E7 /* Onboarding2ViewController.swift */; };
+		CEF698BD1F4610070017B0E7 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BC1F4610070017B0E7 /* Onboarding3ViewController.swift */; };
+		CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,7 @@
 		C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		C7F76951F8992F473202F831 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE970C5C1F4642CD0093F9D9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CEBC0D051F365550009D507E /* VirtualObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CEDCCDA21F3512EF00FA84DE /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
@@ -78,6 +84,10 @@
 		CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEF698B81F460FD00017B0E7 /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = "<group>"; };
+		CEF698BA1F460FF30017B0E7 /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
+		CEF698BC1F4610070017B0E7 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+		CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +146,10 @@
 		3929C48A1E89EC2C00E00B60 /* ARKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				CEF698BE1F46106A0017B0E7 /* extensions */,
+				CEF698B71F460FA70017B0E7 /* onboarding */,
 				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
-				CEE03E6E1F38FFB00051DC51 /* Slider */,
+				CEE03E6E1F38FFB00051DC51 /* slider */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
 				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
@@ -193,7 +205,7 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		CEE03E6E1F38FFB00051DC51 /* Slider */ = {
+		CEE03E6E1F38FFB00051DC51 /* slider */ = {
 			isa = PBXGroup;
 			children = (
 				CEE03E6C1F38FFA70051DC51 /* VirtualObjectCollectionView.swift */,
@@ -204,7 +216,26 @@
 				CEE03E731F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift */,
 				CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */,
 			);
-			path = Slider;
+			path = slider;
+			sourceTree = "<group>";
+		};
+		CEF698B71F460FA70017B0E7 /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CEF698B81F460FD00017B0E7 /* Onboarding1ViewController.swift */,
+				CEF698BA1F460FF30017B0E7 /* Onboarding2ViewController.swift */,
+				CEF698BC1F4610070017B0E7 /* Onboarding3ViewController.swift */,
+				CE970C5C1F4642CD0093F9D9 /* OnboardingViewController.swift */,
+			);
+			path = onboarding;
+			sourceTree = "<group>";
+		};
+		CEF698BE1F46106A0017B0E7 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,14 +379,18 @@
 				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
+				CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */,
 				CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */,
 				CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */,
+				CE970C5D1F4642CD0093F9D9 /* OnboardingViewController.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
+				CEF698BD1F4610070017B0E7 /* Onboarding3ViewController.swift in Sources */,
 				CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */,
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
 				C41366B91EB80DD400EC054A /* TextManager.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
 				39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */,
+				CEF698BB1F460FF30017B0E7 /* Onboarding2ViewController.swift in Sources */,
 				392BB82C1EA19A7C00FBBAC8 /* Plane.swift in Sources */,
 				CEDCCDA31F3512EF00FA84DE /* Circle.swift in Sources */,
 				3987BEDC1E9E057F00167FAC /* Gesture.swift in Sources */,
@@ -366,6 +401,7 @@
 				39C0B9591E9C6B1F003FCA0C /* SettingsViewController.swift in Sources */,
 				C490DAC41E9AB63400210960 /* VirtualObjectSelectionViewController.swift in Sources */,
 				C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */,
+				CEF698B91F460FD00017B0E7 /* Onboarding1ViewController.swift in Sources */,
 				3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */,
 				C4FBC02B1EC6438B003F7864 /* ARCameraTrackingState.swift in Sources */,
 				CEBC515F1F41FF6800CAA7C1 /* PhotoViewController.swift in Sources */,

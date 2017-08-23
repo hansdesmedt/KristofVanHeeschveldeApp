@@ -12,6 +12,7 @@ import UIKit
 import Photos
 import FirebaseAuth
 import FirebaseDatabase
+import PureLayout
 
 
 class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate, VirtualObjectSelectionViewControllerDelegate {
@@ -19,6 +20,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 //  @IBOutlet weak var totalSubmitsBorderView: UIView!
 //  @IBOutlet weak var timeBorderView: UIView!
   
+  @IBOutlet var aboutView: UIView!
+  @IBOutlet var appNumberView: UIView!
   
   // MARK: - Main Setup & View Controller methods
   override func viewDidLoad() {
@@ -62,9 +65,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   }
   
   @IBAction func onboardingPressed(_ sender: UIButton) {
-    performSegue(withIdentifier: "OnboardingViewController", sender: nil)
+    aboutView.toggle(superView: view, x: -155, y: -285)
   }
   
+  @IBAction func numberAppPressed(_ sender: UIButton) {
+    appNumberView.toggle(superView: view, x: 0, y: -285)
+  }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let virtualObjectCollectionViewController = segue.destination as? VirtualObjectCollectionViewController {
       virtualObjectCollectionViewController.viewController = self

@@ -11,7 +11,7 @@ import SceneKit
 class Box: VirtualObject {
 	
 	override init() {
-		super.init(modelName: "box", fileExtension: "scn", thumbImageFilename: "icon_cube", title: "Box")
+		super.init(modelName: "box", fileExtension: "scn", thumbImageFilename: "icon_hans", title: "Box")
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

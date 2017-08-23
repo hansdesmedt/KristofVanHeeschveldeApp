@@ -12,7 +12,7 @@ import SceneKit
 class Circle: VirtualObject {
     
     override init() {
-        super.init(modelName: "circle", fileExtension: "scn", thumbImageFilename: "icon_circle", title: "Circle")
+        super.init(modelName: "circle", fileExtension: "scn", thumbImageFilename: "icon_hans", title: "Circle")
     }
     
     required init?(coder aDecoder: NSCoder) {

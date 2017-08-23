@@ -12,7 +12,7 @@ import SceneKit
 class Text: VirtualObject {
     
     override init() {
-        super.init(modelName: "text", fileExtension: "scn", thumbImageFilename: "icon_text", title: "Text")
+        super.init(modelName: "text", fileExtension: "scn", thumbImageFilename: "icon_hans", title: "Text")
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -10,6 +10,5 @@ target 'ARKitExample' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'PureLayout', '~> 3.0'
-  pod 'KDCircularProgress'
 
 end

@@ -14,17 +14,18 @@
 		392BB82C1EA19A7C00FBBAC8 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392BB82B1EA19A7C00FBBAC8 /* Plane.swift */; };
 		3987BEDC1E9E057F00167FAC /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987BEDB1E9E057F00167FAC /* Gesture.swift */; };
 		39C0B9511E9C63CB003FCA0C /* HitTestVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9501E9C63CB003FCA0C /* HitTestVisualization.swift */; };
-		39C0B9591E9C6B1F003FCA0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9571E9C6B1F003FCA0C /* SettingsViewController.swift */; };
 		39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9581E9C6B1F003FCA0C /* Utilities.swift */; };
 		39D4A8BE1EA1AF530006EC65 /* PlaneDebugVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4A8BD1EA1AF530006EC65 /* PlaneDebugVisualization.swift */; };
 		39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */; };
 		5C57DAB0898D81DB6FB7141F /* Pods_ARKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C533E22606970BDC95715F /* Pods_ARKitExample.framework */; };
-		C40FE5291EC239F100732B01 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FE5231EC239F100732B01 /* Box.swift */; };
 		C41366B91EB80DD400EC054A /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41366B81EB80DD400EC054A /* TextManager.swift */; };
 		C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42A71BC1E9C0AF200944367 /* FocusSquare.swift */; };
-		C490DAC41E9AB63400210960 /* VirtualObjectSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C490DAC31E9AB63400210960 /* VirtualObjectSelectionViewController.swift */; };
 		C4E87DD91EA6B40F002117D6 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */; };
 		C4FBC02B1EC6438B003F7864 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */; };
+		CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A61F4F775100FCB031 /* CircleProgressView.h */; };
+		CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A51F4F775100FCB031 /* CircleProgressView.m */; };
+		CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AC1F4F84A800FCB031 /* ARViewController.swift */; };
+		CE0941AF1F4F852600FCB031 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AE1F4F852600FCB031 /* Box.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
 		CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6961F4DC29E00A99882 /* AboutView.swift */; };
 		CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */; };
@@ -55,19 +56,21 @@
 		392BB82B1EA19A7C00FBBAC8 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		3987BEDB1E9E057F00167FAC /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		39C0B9501E9C63CB003FCA0C /* HitTestVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestVisualization.swift; sourceTree = "<group>"; };
-		39C0B9571E9C6B1F003FCA0C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		39C0B9581E9C6B1F003FCA0C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		39D4A8BD1EA1AF530006EC65 /* PlaneDebugVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneDebugVisualization.swift; sourceTree = "<group>"; };
 		39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C533E22606970BDC95715F /* Pods_ARKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D262668118BBAAAAFD622 /* Pods-ARKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample.release.xcconfig"; sourceTree = "<group>"; };
-		C40FE5231EC239F100732B01 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Box.swift; path = "ARKitExample/Virtual Objects/Box.swift"; sourceTree = SOURCE_ROOT; };
 		C41366B81EB80DD400EC054A /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		C42A71BC1E9C0AF200944367 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
-		C490DAC31E9AB63400210960 /* VirtualObjectSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelectionViewController.swift; sourceTree = "<group>"; };
 		C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VirtualObject.swift; path = ../VirtualObject.swift; sourceTree = "<group>"; };
 		C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		C7F76951F8992F473202F831 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CE0941A51F4F775100FCB031 /* CircleProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleProgressView.m; sourceTree = "<group>"; };
+		CE0941A61F4F775100FCB031 /* CircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
+		CE0941AC1F4F84A800FCB031 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		CE0941AE1F4F852600FCB031 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7FE6961F4DC29E00A99882 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNumberView.swift; sourceTree = "<group>"; };
@@ -142,26 +145,17 @@
 		3929C48A1E89EC2C00E00B60 /* ARKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				CE7FE6951F4DC28000A99882 /* views */,
-				CEF698BE1F46106A0017B0E7 /* extensions */,
-				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
-				CEE03E6E1F38FFB00051DC51 /* slider */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
-				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
-				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
-				C40DF57B1EC2330700D9D59E /* Virtual Objects */,
-				113B64D01ECA81CA0071CBD1 /* UI Elements */,
-				39C0B9571E9C6B1F003FCA0C /* SettingsViewController.swift */,
-				C490DAC31E9AB63400210960 /* VirtualObjectSelectionViewController.swift */,
-				C41366B81EB80DD400EC054A /* TextManager.swift */,
-				C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */,
-				39C0B9581E9C6B1F003FCA0C /* Utilities.swift */,
-				3929C49E1E89EE4400E00B60 /* Models.scnassets */,
-				CE3776D31F44FAEF007A3800 /* Assets.xcassets */,
-				3929C4971E89EC2C00E00B60 /* Info.plist */,
-				CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */,
-				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
 				39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */,
+				CE0941AA1F4F80BD00FCB031 /* components */,
+				CEF698BE1F46106A0017B0E7 /* extensions */,
+				CE0941AB1F4F83BD00FCB031 /* helpers */,
+				C40DF57B1EC2330700D9D59E /* models */,
+				CE3776D31F44FAEF007A3800 /* Assets.xcassets */,
+				3929C49E1E89EE4400E00B60 /* Models.scnassets */,
+				CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */,
+				CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */,
+				3929C4971E89EC2C00E00B60 /* Info.plist */,
 			);
 			path = ARKitExample;
 			sourceTree = "<group>";
@@ -183,15 +177,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C40DF57B1EC2330700D9D59E /* Virtual Objects */ = {
+		C40DF57B1EC2330700D9D59E /* models */ = {
 			isa = PBXGroup;
 			children = (
 				C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */,
-				C40FE5231EC239F100732B01 /* Box.swift */,
+				CE0941AE1F4F852600FCB031 /* Box.swift */,
 				CEDCCDA21F3512EF00FA84DE /* Circle.swift */,
 				CEDCCDA41F35131F00FA84DE /* Text.swift */,
 			);
-			path = "Virtual Objects";
+			path = models;
 			sourceTree = "<group>";
 		};
 		CC6CF3D48B06681D66F6DE20 /* Configuration */ = {
@@ -201,13 +195,39 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		CE7FE6951F4DC28000A99882 /* views */ = {
+		CE0941AA1F4F80BD00FCB031 /* components */ = {
 			isa = PBXGroup;
 			children = (
 				CE7FE6961F4DC29E00A99882 /* AboutView.swift */,
 				CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */,
+				CE0941AC1F4F84A800FCB031 /* ARViewController.swift */,
+				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
+				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
+				CE0DC0261F4F770F001A0C99 /* progressView */,
+				CEE03E6E1F38FFB00051DC51 /* slider */,
+				113B64D01ECA81CA0071CBD1 /* UI Elements */,
+				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
 			);
-			path = views;
+			path = components;
+			sourceTree = "<group>";
+		};
+		CE0941AB1F4F83BD00FCB031 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C41366B81EB80DD400EC054A /* TextManager.swift */,
+				C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */,
+				39C0B9581E9C6B1F003FCA0C /* Utilities.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		CE0DC0261F4F770F001A0C99 /* progressView */ = {
+			isa = PBXGroup;
+			children = (
+				CE0941A61F4F775100FCB031 /* CircleProgressView.h */,
+				CE0941A51F4F775100FCB031 /* CircleProgressView.m */,
+			);
+			path = progressView;
 			sourceTree = "<group>";
 		};
 		CEE03E6E1F38FFB00051DC51 /* slider */ = {
@@ -227,6 +247,7 @@
 		CEF698BE1F46106A0017B0E7 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
 				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
 			);
 			path = extensions;
@@ -316,7 +337,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/KDCircularProgress/KDCircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -324,7 +344,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KDCircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -373,15 +392,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */,
+				CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */,
 				39C0B9511E9C63CB003FCA0C /* HitTestVisualization.swift in Sources */,
 				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
 				CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */,
 				CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */,
+				CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */,
 				CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
 				CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */,
+				CE0941AF1F4F852600FCB031 /* Box.swift in Sources */,
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
 				C41366B91EB80DD400EC054A /* TextManager.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
@@ -390,12 +413,9 @@
 				CEDCCDA31F3512EF00FA84DE /* Circle.swift in Sources */,
 				3987BEDC1E9E057F00167FAC /* Gesture.swift in Sources */,
 				C4E87DD91EA6B40F002117D6 /* VirtualObject.swift in Sources */,
-				C40FE5291EC239F100732B01 /* Box.swift in Sources */,
 				39D4A8BE1EA1AF530006EC65 /* PlaneDebugVisualization.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,
 				CEDCCDA51F35131F00FA84DE /* Text.swift in Sources */,
-				39C0B9591E9C6B1F003FCA0C /* SettingsViewController.swift in Sources */,
-				C490DAC41E9AB63400210960 /* VirtualObjectSelectionViewController.swift in Sources */,
 				CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */,
 				C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */,
 				3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */,
@@ -518,6 +538,7 @@
 			baseConfigurationReference = 1C961114793829DEE93EC3A2 /* Pods-ARKitExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +548,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = be.hansdesmedt.kristofvanheeschvelde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ARKitExample/ARKitExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -537,6 +560,7 @@
 			baseConfigurationReference = 954D262668118BBAAAAFD622 /* Pods-ARKitExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = be.hansdesmedt.kristofvanheeschvelde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ARKitExample/ARKitExample-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

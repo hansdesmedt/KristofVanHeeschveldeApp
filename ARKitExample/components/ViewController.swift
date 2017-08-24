@@ -14,14 +14,15 @@ import FirebaseAuth
 import FirebaseDatabase
 import PureLayout
 
-
-class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate, VirtualObjectSelectionViewControllerDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
   
 //  @IBOutlet weak var totalSubmitsBorderView: UIView!
 //  @IBOutlet weak var timeBorderView: UIView!
   
   @IBOutlet var aboutView: UIView!
   @IBOutlet var appNumberView: UIView!
+  
+  @IBOutlet weak var submitProgressView: CircleProgressView!
   
   // MARK: - Main Setup & View Controller methods
   override func viewDidLoad() {
@@ -60,8 +61,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 //
 //    timeBorderView.layer.borderWidth = 2
 //    timeBorderView.layer.borderColor = UIColor.white.cgColor
-    
-
+    submitProgressView.progress = 0.3
+    submitProgressView.clockwise = false
+    submitProgressView.trackBackgroundColor = UIColor.clear
+    submitProgressView.centerFillColor = UIColor.clear
+    submitProgressView.trackFillColor = UIColor.red
+    submitProgressView.trackWidth = 5
+    submitProgressView.trackBorderColor = UIColor.white.withAlphaComponent(0.5)
+    submitProgressView.trackBorderWidth = 5
   }
   
   @IBAction func onboardingPressed(_ sender: UIButton) {
@@ -606,14 +613,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   //
   // MARK: - VirtualObjectSelectionViewControllerDelegate
   
-  func virtualObjectSelectionViewController(_: VirtualObjectSelectionViewController, didSelectObjectAt index: Int) {
-    
-  }
-  
-  func virtualObjectSelectionViewControllerDidDeselectObject(_: VirtualObjectSelectionViewController) {
-    resetVirtualObject()
-  }
-  
+
   // MARK: - Planes
   
   var planes = [ARPlaneAnchor: Plane]()
@@ -697,7 +697,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   var hitTestVisualization: HitTestVisualization?
   
-  var showHitTestAPIVisualization = UserDefaults.standard.bool(for: .showHitTestAPI) {
+  var showHitTestAPIVisualization = UserDefaults.standard.bool(forKey: .showHitTestAPI) {
     didSet {
       UserDefaults.standard.set(showHitTestAPIVisualization, for: .showHitTestAPI)
       if showHitTestAPIVisualization {

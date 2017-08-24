@@ -697,7 +697,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   var hitTestVisualization: HitTestVisualization?
   
-  var showHitTestAPIVisualization = UserDefaults.standard.bool(forKey: .showHitTestAPI) {
+  var showHitTestAPIVisualization = UserDefaults.standard.bool(for: .showHitTestAPI) {
     didSet {
       UserDefaults.standard.set(showHitTestAPIVisualization, for: .showHitTestAPI)
       if showHitTestAPIVisualization {

@@ -26,6 +26,7 @@
 		CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A51F4F775100FCB031 /* CircleProgressView.m */; };
 		CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AC1F4F84A800FCB031 /* ARViewController.swift */; };
 		CE0941AF1F4F852600FCB031 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AE1F4F852600FCB031 /* Box.swift */; };
+		CE0941B21F4F88AF00FCB031 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
 		CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6961F4DC29E00A99882 /* AboutView.swift */; };
 		CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */; };
@@ -71,6 +72,7 @@
 		CE0941AC1F4F84A800FCB031 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		CE0941AE1F4F852600FCB031 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7FE6961F4DC29E00A99882 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNumberView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */,
+				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
 				CE0941AA1F4F80BD00FCB031 /* components */,
 				CEF698BE1F46106A0017B0E7 /* extensions */,
 				CE0941AB1F4F83BD00FCB031 /* helpers */,
@@ -201,7 +204,6 @@
 				CE7FE6961F4DC29E00A99882 /* AboutView.swift */,
 				CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */,
 				CE0941AC1F4F84A800FCB031 /* ARViewController.swift */,
-				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
 				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
 				CE0DC0261F4F770F001A0C99 /* progressView */,
 				CEE03E6E1F38FFB00051DC51 /* slider */,
@@ -249,6 +251,7 @@
 			children = (
 				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
 				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
+				CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */,
 				CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */,
 				CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */,
+				CE0941B21F4F88AF00FCB031 /* UserDefaultsExtension.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
 				CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */,
 				CE0941AF1F4F852600FCB031 /* Box.swift in Sources */,

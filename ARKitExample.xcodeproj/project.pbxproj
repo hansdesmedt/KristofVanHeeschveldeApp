@@ -42,6 +42,7 @@
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
 		CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */; };
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
+		CEEE97741F56186E008440AD /* ARSCNViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */; };
 		CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewExtension.swift; sourceTree = "<group>"; };
 		CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
 				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
 				CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */,
+				CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
+				CEEE97741F56186E008440AD /* ARSCNViewExtension.swift in Sources */,
 				CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */,
 				CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */,
 				CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */,

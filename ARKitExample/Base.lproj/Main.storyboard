@@ -365,6 +365,9 @@
                             <constraint firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="pUE-cM-3pe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="E6c-py-dvH" id="7rd-oW-ba7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf4-Hc-LFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

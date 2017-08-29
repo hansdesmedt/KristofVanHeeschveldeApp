@@ -29,23 +29,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     super.viewDidLoad()
     
     Setting.registerDefaults()
-    setupScene()
-    setupDebug()
-    setupUIControls()
-    setupFocusSquare()
-    updateSettings()
-    resetVirtualObject()
+
+
     
-    Auth.auth().signInAnonymously() { (user, error) in
-      //        let isAnonymous = user!.isAnonymous  // true
-      let uid = user!.uid
-      print(uid)
-      
-      let ref = Database.database().reference()
-      ref.child("photos").setValue(["username": "test"])
-      ref.child("installs").setValue(["uuid": "test"])
-      //        ref.child("installs").setv
-    }
+//    Auth.auth().signInAnonymously() { (user, error) in
+//      //        let isAnonymous = user!.isAnonymous  // true
+//      let uid = user!.uid
+//      print(uid)
+//
+//      let ref = Database.database().reference()
+//      ref.child("photos").setValue(["username": "test"])
+//      ref.child("installs").setValue(["uuid": "test"])
+//      //        ref.child("installs").setv
+//    }
     
     //      let uid = Authe
     ////      let snapsRef = Database.database().reference().child("snaps")
@@ -53,8 +49,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     
     // Prevent the screen from being dimmed after a while.
     UIApplication.shared.isIdleTimerDisabled = true
-    // Start the ARSession.
-    restartPlaneDetection()
+//    // Start the ARSession.
+//    restartPlaneDetection()
     
 //    totalSubmitsBorderView.layer.borderWidth = 2
 //    totalSubmitsBorderView.layer.borderColor = UIColor.white.cgColor
@@ -84,109 +80,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    session.run(sessionConfig)
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    session.pause()
-  }
-  
+
   // MARK: - ARKit / ARSCNView
-  let session = ARSession()
-  var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
-  var use3DOFTracking = false {
-    didSet {
-      if use3DOFTracking {
-        sessionConfig = ARSessionConfiguration()
-      }
-      sessionConfig.isLightEstimationEnabled = UserDefaults.standard.bool(for: .ambientLightEstimation)
-      session.run(sessionConfig)
-    }
-  }
-  var use3DOFTrackingFallback = false
-  @IBOutlet var sceneView: ARSCNView!
-  var screenCenter: CGPoint?
-  
-  func setupScene() {
-    // set up sceneView
-    sceneView.delegate = self
-    sceneView.session = session
-    sceneView.antialiasingMode = .multisampling4X
-    sceneView.automaticallyUpdatesLighting = false
-    
-    sceneView.preferredFramesPerSecond = 60
-    sceneView.contentScaleFactor = 1.3
-    //sceneView.showsStatistics = true
-    
-    enableEnvironmentMapWithIntensity(25.0)
-    
-    DispatchQueue.main.async {
-      self.screenCenter = self.sceneView.bounds.mid
-    }
-    
-    if let camera = sceneView.pointOfView?.camera {
-      camera.wantsHDR = true
-      camera.wantsExposureAdaptation = true
-      camera.exposureOffset = -1
-      camera.minimumExposure = -1
-    }
-  }
-  
-  func enableEnvironmentMapWithIntensity(_ intensity: CGFloat) {
-    if sceneView.scene.lightingEnvironment.contents == nil {
-      if let environmentMap = UIImage(named: "Models.scnassets/sharedImages/environment_blur.exr") {
-        sceneView.scene.lightingEnvironment.contents = environmentMap
-      }
-    }
-    sceneView.scene.lightingEnvironment.intensity = intensity
-  }
-  
-  // MARK: - ARSCNViewDelegate
-  
-  func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-    refreshFeaturePoints()
-    
-    DispatchQueue.main.async {
-      self.updateFocusSquare()
-      self.hitTestVisualization?.render()
-      
-      // If light estimation is enabled, update the intensity of the model's lights and the environment map
-      if let lightEstimate = self.session.currentFrame?.lightEstimate {
-        self.enableEnvironmentMapWithIntensity(lightEstimate.ambientIntensity / 40)
-      } else {
-        self.enableEnvironmentMapWithIntensity(25)
-      }
-    }
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-    DispatchQueue.main.async {
-      if let planeAnchor = anchor as? ARPlaneAnchor {
-        self.addPlane(node: node, anchor: planeAnchor)
-        self.checkIfObjectShouldMoveOntoPlane(anchor: planeAnchor)
-      }
-    }
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-    DispatchQueue.main.async {
-      if let planeAnchor = anchor as? ARPlaneAnchor {
-        self.updatePlane(anchor: planeAnchor)
-        self.checkIfObjectShouldMoveOntoPlane(anchor: planeAnchor)
-      }
-    }
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-    DispatchQueue.main.async {
-      if let planeAnchor = anchor as? ARPlaneAnchor {
-        self.removePlane(anchor: planeAnchor)
-      }
-    }
-  }
+
   
   var trackingFallbackTimer: Timer?
   
@@ -356,74 +252,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   var dragOnInfinitePlanesEnabled = false
   
-  func worldPositionFromScreenPosition(_ position: CGPoint,
-                                       objectPos: SCNVector3?,
-                                       infinitePlane: Bool = false) -> (position: SCNVector3?, planeAnchor: ARPlaneAnchor?, hitAPlane: Bool) {
-    
-    // -------------------------------------------------------------------------------
-    // 1. Always do a hit test against exisiting plane anchors first.
-    //    (If any such anchors exist & only within their extents.)
-    
-    let planeHitTestResults = sceneView.hitTest(position, types: .existingPlaneUsingExtent)
-    if let result = planeHitTestResults.first {
-      
-      let planeHitTestPosition = SCNVector3.positionFromTransform(result.worldTransform)
-      let planeAnchor = result.anchor
-      
-      // Return immediately - this is the best possible outcome.
-      return (planeHitTestPosition, planeAnchor as? ARPlaneAnchor, true)
-    }
-    
-    // -------------------------------------------------------------------------------
-    // 2. Collect more information about the environment by hit testing against
-    //    the feature point cloud, but do not return the result yet.
-    
-    var featureHitTestPosition: SCNVector3?
-    var highQualityFeatureHitTestResult = false
-    
-    let highQualityfeatureHitTestResults = sceneView.hitTestWithFeatures(position, coneOpeningAngleInDegrees: 18, minDistance: 0.2, maxDistance: 2.0)
-    
-    if !highQualityfeatureHitTestResults.isEmpty {
-      let result = highQualityfeatureHitTestResults[0]
-      featureHitTestPosition = result.position
-      highQualityFeatureHitTestResult = true
-    }
-    
-    // -------------------------------------------------------------------------------
-    // 3. If desired or necessary (no good feature hit test result): Hit test
-    //    against an infinite, horizontal plane (ignoring the real world).
-    
-    if (infinitePlane && dragOnInfinitePlanesEnabled) || !highQualityFeatureHitTestResult {
-      
-      let pointOnPlane = objectPos ?? SCNVector3Zero
-      
-      let pointOnInfinitePlane = sceneView.hitTestWithInfiniteHorizontalPlane(position, pointOnPlane)
-      if pointOnInfinitePlane != nil {
-        return (pointOnInfinitePlane, nil, true)
-      }
-    }
-    
-    // -------------------------------------------------------------------------------
-    // 4. If available, return the result of the hit test against high quality
-    //    features if the hit tests against infinite planes were skipped or no
-    //    infinite plane was hit.
-    
-    if highQualityFeatureHitTestResult {
-      return (featureHitTestPosition, nil, false)
-    }
-    
-    // -------------------------------------------------------------------------------
-    // 5. As a last resort, perform a second, unfiltered hit test against features.
-    //    If there are no features in the scene, the result returned here will be nil.
-    
-    let unfilteredFeatureHitTestResults = sceneView.hitTestWithFeatures(position)
-    if !unfilteredFeatureHitTestResults.isEmpty {
-      let result = unfilteredFeatureHitTestResults[0]
-      return (result.position, nil, false)
-    }
-    
-    return (nil, nil, false)
-  }
+
   
   // Use average of recent virtual object distances to avoid rapid changes in object scale.
   var recentVirtualObjectDistances = [CGFloat]()
@@ -448,18 +277,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
       sceneView.scene.rootNode.addChildNode(object)
     }
   }
-  
-  func resetVirtualObject() {
-    virtualObject?.unloadModel()
-    virtualObject?.removeFromParentNode()
-    virtualObject = nil
-    
-    //        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-    //        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
-    
-    // Reset selected object id for row highlighting in object selection view controller.
-    UserDefaults.standard.set(-1, for: .selectedObjectID)
-  }
+
   
   func updateVirtualObjectPosition(_ pos: SCNVector3, _ filterPosition: Bool) {
     guard let object = virtualObject else {
@@ -498,46 +316,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  func checkIfObjectShouldMoveOntoPlane(anchor: ARPlaneAnchor) {
-    guard let object = virtualObject, let planeAnchorNode = sceneView.node(for: anchor) else {
-      return
-    }
-    
-    // Get the object's position in the plane's coordinate system.
-    let objectPos = planeAnchorNode.convertPosition(object.position, from: object.parent)
-    
-    if objectPos.y == 0 {
-      return; // The object is already on the plane - nothing to do here.
-    }
-    
-    // Add 10% tolerance to the corners of the plane.
-    let tolerance: Float = 0.1
-    
-    let minX: Float = anchor.center.x - anchor.extent.x / 2 - anchor.extent.x * tolerance
-    let maxX: Float = anchor.center.x + anchor.extent.x / 2 + anchor.extent.x * tolerance
-    let minZ: Float = anchor.center.z - anchor.extent.z / 2 - anchor.extent.z * tolerance
-    let maxZ: Float = anchor.center.z + anchor.extent.z / 2 + anchor.extent.z * tolerance
-    
-    if objectPos.x < minX || objectPos.x > maxX || objectPos.z < minZ || objectPos.z > maxZ {
-      return
-    }
-    
-    // Drop the object onto the plane if it is near it.
-    let verticalAllowance: Float = 0.03
-    if objectPos.y > -verticalAllowance && objectPos.y < verticalAllowance {
-      textManager.showDebugMessage("OBJECT MOVED\nSurface detected nearby")
-      
-      SCNTransaction.begin()
-      SCNTransaction.animationDuration = 0.5
-      SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      object.position.y = anchor.transform.columns.3.y
-      SCNTransaction.commit()
-    }
-  }
+
   
   // MARK: - Virtual Object Loading
   
-  var virtualObject: VirtualObject?
+  
   var isLoadingObject: Bool = false {
     didSet {
       DispatchQueue.main.async {
@@ -616,86 +399,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 
   // MARK: - Planes
   
-  var planes = [ARPlaneAnchor: Plane]()
+
   
-  func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
-    
-    let pos = SCNVector3.positionFromTransform(anchor.transform)
-    textManager.showDebugMessage("NEW SURFACE DETECTED AT \(pos.friendlyString())")
-    
-    let plane = Plane(anchor, showDebugVisuals)
-    
-    planes[anchor] = plane
-    node.addChildNode(plane)
-    
-    textManager.cancelScheduledMessage(forType: .planeEstimation)
-    textManager.showMessage("SURFACE DETECTED")
-    if virtualObject == nil {
-      textManager.scheduleMessage("TAP + TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .contentPlacement)
-    }
-  }
+
   
-  func updatePlane(anchor: ARPlaneAnchor) {
-    if let plane = planes[anchor] {
-      plane.update(anchor)
-    }
-  }
-  
-  func removePlane(anchor: ARPlaneAnchor) {
-    if let plane = planes.removeValue(forKey: anchor) {
-      plane.removeFromParentNode()
-    }
-  }
-  
-  func restartPlaneDetection() {
-    
-    // configure session
-    if let worldSessionConfig = sessionConfig as? ARWorldTrackingSessionConfiguration {
-      worldSessionConfig.planeDetection = .horizontal
-      session.run(worldSessionConfig, options: [.resetTracking, .removeExistingAnchors])
-    }
-    
-    // reset timer
-    if trackingFallbackTimer != nil {
-      trackingFallbackTimer!.invalidate()
-      trackingFallbackTimer = nil
-    }
-    
-    textManager.scheduleMessage("FIND A SURFACE TO PLACE AN OBJECT",
-                                inSeconds: 7.5,
-                                messageType: .planeEstimation)
-  }
-  
-  // MARK: - Focus Square
-  var focusSquare: FocusSquare?
-  
-  func setupFocusSquare() {
-    focusSquare?.isHidden = true
-    focusSquare?.removeFromParentNode()
-    focusSquare = FocusSquare()
-    sceneView.scene.rootNode.addChildNode(focusSquare!)
-    
-    textManager.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
-  }
-  
-  func updateFocusSquare() {
-    guard let screenCenter = screenCenter else { return }
-    
-    if virtualObject != nil && sceneView.isNode(virtualObject!, insideFrustumOf: sceneView.pointOfView!) {
-      focusSquare?.hide()
-    } else {
-      focusSquare?.unhide()
-    }
-    let (worldPos, planeAnchor, _) = worldPositionFromScreenPosition(screenCenter, objectPos: focusSquare?.position)
-    if let worldPos = worldPos {
-      focusSquare?.update(for: worldPos, planeAnchor: planeAnchor, camera: self.session.currentFrame?.camera)
-      textManager.cancelScheduledMessage(forType: .focusSquare)
-    }
-  }
   
   // MARK: - Hit Test Visualization
   
-  var hitTestVisualization: HitTestVisualization?
+  
   
   var showHitTestAPIVisualization = UserDefaults.standard.bool(for: .showHitTestAPI) {
     didSet {
@@ -712,44 +423,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
 //  @IBOutlet var featurePointCountLabel: UILabel!
   
-  func refreshFeaturePoints() {
-    guard showDebugVisuals else {
-      return
-    }
-    
-    // retrieve cloud
-    guard let cloud = session.currentFrame?.rawFeaturePoints else {
-      return
-    }
-    
-    DispatchQueue.main.async {
-//      self.featurePointCountLabel.text = "Features: \(cloud.__count)".uppercased()
-    }
-  }
-  
-  var showDebugVisuals: Bool = UserDefaults.standard.bool(for: .debugMode) {
-    didSet {
-//      featurePointCountLabel.isHidden = !showDebugVisuals
-//      debugMessageLabel.isHidden = !showDebugVisuals
-//      messagePanel.isHidden = !showDebugVisuals
-      planes.values.forEach { $0.showDebugVisualization(showDebugVisuals) }
-      
-      if showDebugVisuals {
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
-      } else {
-        sceneView.debugOptions = []
-      }
-      
-      // save pref
-      UserDefaults.standard.set(showDebugVisuals, for: .debugMode)
-    }
-  }
-  
-  func setupDebug() {
-    // Set appearance of debug output panel
-//    messagePanel.layer.cornerRadius = 3.0
-//    messagePanel.clipsToBounds = true
-  }
+ 
+
   
   // MARK: - UI Elements and Actions
   
@@ -757,18 +432,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
 //  @IBOutlet weak var messageLabel: UILabel!
 //  @IBOutlet weak var debugMessageLabel: UILabel!
   
-  var textManager: TextManager!
-  
-  func setupUIControls() {
-    textManager = TextManager(viewController: self)
-    
-    // hide debug message view
-//    debugMessageLabel.isHidden = true
-//
-//    featurePointCountLabel.text = ""
-//    debugMessageLabel.text = ""
-//    messageLabel.text = ""
-  }
+
   
 //  @IBOutlet weak var restartExperienceButton: UIButton!
 //  var restartExperienceButtonIsEnabled = true
@@ -875,19 +539,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   //    updateSettings()
   //  }
   
-  private func updateSettings() {
-    let defaults = UserDefaults.standard
-    
-    showDebugVisuals = defaults.bool(for: .debugMode)
-    toggleAmbientLightEstimation(defaults.bool(for: .ambientLightEstimation))
-    dragOnInfinitePlanesEnabled = defaults.bool(for: .dragOnInfinitePlanes)
-    showHitTestAPIVisualization = defaults.bool(for: .showHitTestAPI)
-    use3DOFTracking	= defaults.bool(for: .use3DOFTracking)
-    use3DOFTrackingFallback = defaults.bool(for: .use3DOFFallback)
-    for (_, plane) in planes {
-      plane.updateOcclusionSetting()
-    }
-  }
+
   
   // MARK: - Error handling
   
@@ -908,13 +560,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   }
   
   // MARK: - UIPopoverPresentationControllerDelegate
-  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-    return .none
-  }
-  
-  func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-    updateSettings()
-  }
+//  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+//    return .none
+//  }
+//
+//  func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+//    updateSettings()
+//  }
   
   @IBAction func unwindFromPhoto(_ segue: UIStoryboardSegue) {
 

@@ -29,6 +29,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3H-cE-tdV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="3pv-vN-DnK" kind="embed" id="tgU-8X-ubu"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgI-EJ-ihh">
                                 <rect key="frame" x="0.0" y="520" width="375" height="77"/>
                                 <constraints>
@@ -99,10 +105,14 @@
                             <constraint firstAttribute="trailing" secondItem="oQ5-UV-hoL" secondAttribute="trailing" constant="16" id="JvJ-VZ-jzK"/>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="centerX" secondItem="7Cp-Cs-hcg" secondAttribute="centerX" id="Lwe-Ij-F9O"/>
                             <constraint firstItem="As2-pN-hEV" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="P4K-ye-hst"/>
+                            <constraint firstAttribute="bottom" secondItem="z3H-cE-tdV" secondAttribute="bottom" id="P5I-lW-S2d"/>
                             <constraint firstItem="2Ns-cN-KSx" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" constant="15" id="R5W-ai-5fg"/>
+                            <constraint firstItem="z3H-cE-tdV" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="R70-ve-ZjG"/>
+                            <constraint firstItem="z3H-cE-tdV" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="VLz-cx-oth"/>
                             <constraint firstItem="OnA-go-Ul4" firstAttribute="centerX" secondItem="RLh-bf-1c3" secondAttribute="centerX" id="ZnI-zd-pLT"/>
                             <constraint firstItem="OnA-go-Ul4" firstAttribute="centerY" secondItem="2Ns-cN-KSx" secondAttribute="centerY" id="hjy-2V-Bzu"/>
                             <constraint firstAttribute="trailing" secondItem="FgI-EJ-ihh" secondAttribute="trailing" id="jry-dI-cK4"/>
+                            <constraint firstAttribute="trailing" secondItem="z3H-cE-tdV" secondAttribute="trailing" id="kAk-q8-Yy9"/>
                             <constraint firstItem="ULL-Zn-enT" firstAttribute="top" secondItem="FgI-EJ-ihh" secondAttribute="bottom" constant="70" id="mEk-QF-BKU"/>
                             <constraint firstItem="ULL-Zn-enT" firstAttribute="top" secondItem="zey-Ll-TSc" secondAttribute="bottom" constant="12" id="nB3-Op-JYT"/>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="nJs-yz-aLk"/>
@@ -277,6 +287,38 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="-1274.4000000000001" y="-1464.0179910044978"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wsa-ys-Ss3">
+            <objects>
+                <viewController id="3pv-vN-DnK" customClass="ViewController" customModule="ARKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eI6-Io-w5t"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8j-eV-65j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nQz-Bj-eXy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-oV-6Tl" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bSh-oV-6Tl" secondAttribute="trailing" id="Rgq-t2-QtK"/>
+                            <constraint firstItem="bSh-oV-6Tl" firstAttribute="top" secondItem="nQz-Bj-eXy" secondAttribute="top" id="Vju-74-mxv"/>
+                            <constraint firstAttribute="bottom" secondItem="bSh-oV-6Tl" secondAttribute="bottom" id="gWP-W4-zgy"/>
+                            <constraint firstItem="bSh-oV-6Tl" firstAttribute="leading" secondItem="nQz-Bj-eXy" secondAttribute="leading" id="maD-1H-Acc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="bSh-oV-6Tl" id="y16-MG-z1l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktw-Af-yD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-1468"/>
         </scene>
         <!--Virtual Object Collection View Controller-->
         <scene sceneID="acj-Cn-DuD">

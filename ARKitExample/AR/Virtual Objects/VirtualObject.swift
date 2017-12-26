@@ -5,12 +5,9 @@ Abstract:
 Wrapper SceneKit node for virtual objects placed into the AR scene.
 */
 
+import Foundation
 import SceneKit
 import ARKit
-
-protocol ReactsToScale {
-  func reactToScale()
-}
 
 class VirtualObject: SCNNode {
 	
@@ -19,6 +16,8 @@ class VirtualObject: SCNNode {
 	var thumbImage: UIImage!
 	var title: String = ""
 	var modelLoaded: Bool = false
+	
+	var viewController: ViewController?
 	
 	override init() {
 		super.init()
@@ -61,5 +60,56 @@ class VirtualObject: SCNNode {
 		}
 		
 		modelLoaded = false
+	}
+	
+	func translateBasedOnScreenPos(_ pos: CGPoint, instantly: Bool, infinitePlane: Bool) {
+		
+		guard let controller = viewController else {
+			return
+		}
+		
+		let result = controller.worldPositionFromScreenPosition(pos, objectPos: self.position, infinitePlane: infinitePlane)
+
+		controller.moveVirtualObjectToPosition(result.position, instantly, !result.hitAPlane)
+	}
+}
+
+extension VirtualObject {
+	
+	static func isNodePartOfVirtualObject(_ node: SCNNode) -> Bool {
+		if node.name == "Virtual object root node" {
+			return true
+		}
+		
+		if node.parent != nil {
+			return isNodePartOfVirtualObject(node.parent!)
+		}
+		
+		return false
+	}
+	
+	static let availableObjects: [VirtualObject] = [
+		Text(),
+	]
+}
+
+// MARK: - Protocols for Virtual Objects
+
+protocol ReactsToScale {
+	func reactToScale()
+}
+
+extension SCNNode {
+	
+	func reactsToScale() -> ReactsToScale? {
+		if let canReact = self as? ReactsToScale {
+			return canReact
+		}
+		
+		if parent != nil {
+			return parent!.reactsToScale()
+		}
+		
+		return nil
 	}
 }

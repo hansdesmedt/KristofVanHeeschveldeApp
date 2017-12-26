@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="MainViewController" customModule="ARKitExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="riY-3M-txv"/>
                         <viewControllerLayoutGuide type="bottom" id="ULL-Zn-enT"/>
@@ -53,7 +52,7 @@
                                     <constraint firstAttribute="width" secondItem="2Ns-cN-KSx" secondAttribute="height" multiplier="65:87" id="nSD-4z-PzD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
-                                <state key="normal" title="Button" image="bitmojis_thinking"/>
+                                <state key="normal" title="K"/>
                                 <connections>
                                     <action selector="onboardingPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="f5d-PN-0hW"/>
                                 </connections>
@@ -66,8 +65,8 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-go-Ul4">
-                                <rect key="frame" x="135" y="27.5" width="104" height="35"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                <rect key="frame" x="146.5" y="30" width="81" height="30"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <state key="normal" title="APP: 1/100"/>
                                 <connections>
                                     <action selector="numberAppPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="1BZ-6d-CXm"/>
@@ -75,30 +74,29 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zey-Ll-TSc">
                                 <rect key="frame" x="15" y="615" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="AFN-0S-whb"/>
                                     <constraint firstAttribute="height" constant="40" id="zMT-B0-X6S"/>
                                 </constraints>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J84-Te-Wgv" customClass="CircleProgressView">
-                                <rect key="frame" x="15" y="615" width="40" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ5-UV-hoL">
-                                <rect key="frame" x="313" y="625" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ5-UV-hoL">
+                                <rect key="frame" x="319" y="615" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fCT-rA-svm"/>
+                                    <constraint firstAttribute="width" constant="40" id="xEa-l4-csc"/>
+                                </constraints>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="centerY" secondItem="7Cp-Cs-hcg" secondAttribute="centerY" id="3HE-Eu-1VN"/>
                             <constraint firstItem="zey-Ll-TSc" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" constant="15" id="3kc-MR-ugR"/>
-                            <constraint firstItem="zey-Ll-TSc" firstAttribute="trailing" secondItem="J84-Te-Wgv" secondAttribute="trailing" id="7iT-uL-oFU"/>
                             <constraint firstItem="2Ns-cN-KSx" firstAttribute="top" secondItem="riY-3M-txv" secondAttribute="bottom" constant="10" id="DpH-uR-ZjN"/>
-                            <constraint firstItem="zey-Ll-TSc" firstAttribute="top" secondItem="J84-Te-Wgv" secondAttribute="top" id="EKc-0k-Yjd"/>
-                            <constraint firstItem="zey-Ll-TSc" firstAttribute="leading" secondItem="J84-Te-Wgv" secondAttribute="leading" id="I2B-eY-AI4"/>
+                            <constraint firstAttribute="bottom" secondItem="oQ5-UV-hoL" secondAttribute="bottom" constant="12" id="Fz8-2e-bG4"/>
+                            <constraint firstAttribute="trailing" secondItem="oQ5-UV-hoL" secondAttribute="trailing" constant="16" id="JvJ-VZ-jzK"/>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="centerX" secondItem="7Cp-Cs-hcg" secondAttribute="centerX" id="Lwe-Ij-F9O"/>
                             <constraint firstItem="As2-pN-hEV" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="P4K-ye-hst"/>
                             <constraint firstItem="2Ns-cN-KSx" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" constant="15" id="R5W-ai-5fg"/>
@@ -109,15 +107,12 @@
                             <constraint firstItem="ULL-Zn-enT" firstAttribute="top" secondItem="zey-Ll-TSc" secondAttribute="bottom" constant="12" id="nB3-Op-JYT"/>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="nJs-yz-aLk"/>
                             <constraint firstItem="As2-pN-hEV" firstAttribute="top" secondItem="2Ns-cN-KSx" secondAttribute="bottom" constant="10" id="nP4-SF-a02"/>
-                            <constraint firstItem="zey-Ll-TSc" firstAttribute="bottom" secondItem="J84-Te-Wgv" secondAttribute="bottom" id="t21-ha-Ipv"/>
                             <constraint firstAttribute="trailing" secondItem="As2-pN-hEV" secondAttribute="trailing" id="xbZ-v3-SQ0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="aboutView" destination="hGC-9n-QFu" id="3ib-RC-oDO"/>
                         <outlet property="appNumberView" destination="deE-DT-NW2" id="S1z-CC-XeX"/>
-                        <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
-                        <outlet property="submitProgressView" destination="J84-Te-Wgv" id="lLV-Cv-dWg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -287,7 +282,7 @@
         <scene sceneID="acj-Cn-DuD">
             <objects>
                 <collectionViewController id="U0B-If-Wmo" customClass="VirtualObjectCollectionViewController" customModule="ARKitExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="lSW-qu-Yw3" customClass="VirtualObjectCollectionView" customModule="ARKitExample" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="lSW-qu-Yw3" customClass="VirtualObjectCollectionView" customModule="ARKitExample" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,7 +293,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="1nF-Df-wiY" customClass="VirtualObjectCollectionViewCell" customModule="ARKitExample" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Cell" id="1nF-Df-wiY" customClass="VirtualObjectCollectionViewCell" customModule="ARKitExample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -306,9 +301,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selector_background" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-Kg-uKc">
-                                            <rect key="frame" x="-5" y="-5" width="87" height="87"/>
+                                            <rect key="frame" x="-5" y="-5" width="87" height="10"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5iy-3H-m0p">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5iy-3H-m0p">
                                             <rect key="frame" x="3" y="3" width="71" height="71"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
@@ -340,38 +335,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2P-jM-VTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1274" y="-972"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6lX-jH-EZc">
-            <objects>
-                <viewController id="aa9-rX-OqE" customClass="ARViewController" customModule="ARKitExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sEm-Tb-CYx"/>
-                        <viewControllerLayoutGuide type="bottom" id="2EJ-Sc-QPG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oO8-Ax-kcR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-py-dvH" customClass="ARSCNView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </sceneKitView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="MLJ-hu-poh"/>
-                            <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="oO8-Ax-kcR" secondAttribute="top" id="jiX-1L-vGM"/>
-                            <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="oO8-Ax-kcR" secondAttribute="leading" id="laH-hU-d2v"/>
-                            <constraint firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="pUE-cM-3pe"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="sceneView" destination="E6c-py-dvH" id="7rd-oW-ba7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lf4-Hc-LFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-447" y="-1464"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="9zr-wy-tjF">
@@ -462,7 +425,6 @@
     </scenes>
     <resources>
         <image name="bitmojis_hi" width="63" height="86"/>
-        <image name="bitmojis_thinking" width="65" height="87"/>
         <image name="icon_close" width="75" height="75"/>
         <image name="icon_disk" width="75" height="75"/>
         <image name="icon_facebook" width="75" height="75"/>

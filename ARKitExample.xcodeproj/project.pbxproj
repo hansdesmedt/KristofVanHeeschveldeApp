@@ -8,41 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */; };
-		3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48D1E89EC2C00E00B60 /* ViewController.swift */; };
 		3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3929C48F1E89EC2C00E00B60 /* Main.storyboard */; };
-		3929C49F1E89EE4400E00B60 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3929C49E1E89EE4400E00B60 /* Models.scnassets */; };
-		392BB82C1EA19A7C00FBBAC8 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392BB82B1EA19A7C00FBBAC8 /* Plane.swift */; };
-		3987BEDC1E9E057F00167FAC /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987BEDB1E9E057F00167FAC /* Gesture.swift */; };
-		39C0B9511E9C63CB003FCA0C /* HitTestVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9501E9C63CB003FCA0C /* HitTestVisualization.swift */; };
-		39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9581E9C6B1F003FCA0C /* Utilities.swift */; };
-		39D4A8BE1EA1AF530006EC65 /* PlaneDebugVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4A8BD1EA1AF530006EC65 /* PlaneDebugVisualization.swift */; };
 		39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */; };
 		5C57DAB0898D81DB6FB7141F /* Pods_ARKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C533E22606970BDC95715F /* Pods_ARKitExample.framework */; };
-		C41366B91EB80DD400EC054A /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41366B81EB80DD400EC054A /* TextManager.swift */; };
-		C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42A71BC1E9C0AF200944367 /* FocusSquare.swift */; };
-		C4E87DD91EA6B40F002117D6 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */; };
-		C4FBC02B1EC6438B003F7864 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */; };
 		CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A61F4F775100FCB031 /* CircleProgressView.h */; };
 		CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A51F4F775100FCB031 /* CircleProgressView.m */; };
-		CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AC1F4F84A800FCB031 /* ARViewController.swift */; };
-		CE0941AF1F4F852600FCB031 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941AE1F4F852600FCB031 /* Box.swift */; };
-		CE0941B21F4F88AF00FCB031 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */; };
+		CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
 		CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6961F4DC29E00A99882 /* AboutView.swift */; };
 		CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */; };
 		CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC0D051F365550009D507E /* VirtualObjectCollectionViewCell.swift */; };
 		CEBC515F1F41FF6800CAA7C1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */; };
-		CEDCCDA31F3512EF00FA84DE /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCDA21F3512EF00FA84DE /* Circle.swift */; };
-		CEDCCDA51F35131F00FA84DE /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCDA41F35131F00FA84DE /* Text.swift */; };
 		CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCDA61F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift */; };
 		CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E6C1F38FFA70051DC51 /* VirtualObjectCollectionView.swift */; };
 		CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E6F1F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift */; };
 		CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E711F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift */; };
 		CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E731F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift */; };
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
-		CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */; };
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
-		CEEE97741F56186E008440AD /* ARSCNViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */; };
+		CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2256C1F573FBD00698C20 /* MainViewController.swift */; };
 		CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,45 +35,29 @@
 		1C961114793829DEE93EC3A2 /* Pods-ARKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		3929C4881E89EC2C00E00B60 /* ARKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3929C4901E89EC2C00E00B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3929C4971E89EC2C00E00B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3929C49E1E89EE4400E00B60 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
-		392BB82B1EA19A7C00FBBAC8 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
-		3987BEDB1E9E057F00167FAC /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
-		39C0B9501E9C63CB003FCA0C /* HitTestVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestVisualization.swift; sourceTree = "<group>"; };
-		39C0B9581E9C6B1F003FCA0C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		39D4A8BD1EA1AF530006EC65 /* PlaneDebugVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneDebugVisualization.swift; sourceTree = "<group>"; };
 		39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C533E22606970BDC95715F /* Pods_ARKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D262668118BBAAAAFD622 /* Pods-ARKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample.release.xcconfig"; sourceTree = "<group>"; };
-		C41366B81EB80DD400EC054A /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
-		C42A71BC1E9C0AF200944367 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
-		C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VirtualObject.swift; path = ../VirtualObject.swift; sourceTree = "<group>"; };
-		C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		C7F76951F8992F473202F831 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CE0941A51F4F775100FCB031 /* CircleProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleProgressView.m; sourceTree = "<group>"; };
 		CE0941A61F4F775100FCB031 /* CircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
-		CE0941AC1F4F84A800FCB031 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
-		CE0941AE1F4F852600FCB031 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtensions.swift; path = ARKitExample/UI/extensions/UICollectionViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		CE7FE6961F4DC29E00A99882 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNumberView.swift; sourceTree = "<group>"; };
 		CEBC0D051F365550009D507E /* VirtualObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		CEDCCDA21F3512EF00FA84DE /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		CEDCCDA41F35131F00FA84DE /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		CEDCCDA61F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewController.swift; sourceTree = "<group>"; };
 		CEE03E6C1F38FFA70051DC51 /* VirtualObjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionView.swift; sourceTree = "<group>"; };
 		CEE03E6F1F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		CEE03E711F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewFlowLayoutHorizontal.swift; sourceTree = "<group>"; };
 		CEE03E731F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift; sourceTree = "<group>"; };
 		CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
-		CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewExtension.swift; sourceTree = "<group>"; };
+		CEF2256C1F573FBD00698C20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,18 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		113B64D01ECA81CA0071CBD1 /* UI Elements */ = {
-			isa = PBXGroup;
-			children = (
-				C42A71BC1E9C0AF200944367 /* FocusSquare.swift */,
-				3987BEDB1E9E057F00167FAC /* Gesture.swift */,
-				392BB82B1EA19A7C00FBBAC8 /* Plane.swift */,
-				39D4A8BD1EA1AF530006EC65 /* PlaneDebugVisualization.swift */,
-				39C0B9501E9C63CB003FCA0C /* HitTestVisualization.swift */,
-			);
-			path = "UI Elements";
-			sourceTree = "<group>";
-		};
 		20AC00ED883A872FFF7DC1FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,18 +105,14 @@
 		3929C48A1E89EC2C00E00B60 /* ARKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				CE4EBBDB1FF29F480038C175 /* AR */,
+				CE4EBBDC1FF29F4F0038C175 /* UI */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
-				39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */,
-				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
-				CE0941AA1F4F80BD00FCB031 /* components */,
-				CEF698BE1F46106A0017B0E7 /* extensions */,
-				CE0941AB1F4F83BD00FCB031 /* helpers */,
-				C40DF57B1EC2330700D9D59E /* models */,
-				CE3776D31F44FAEF007A3800 /* Assets.xcassets */,
-				3929C49E1E89EE4400E00B60 /* Models.scnassets */,
 				CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */,
 				CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */,
 				3929C4971E89EC2C00E00B60 /* Info.plist */,
+				39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */,
+				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
 			);
 			path = ARKitExample;
 			sourceTree = "<group>";
@@ -182,17 +134,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C40DF57B1EC2330700D9D59E /* models */ = {
-			isa = PBXGroup;
-			children = (
-				C4E87DD81EA6B40F002117D6 /* VirtualObject.swift */,
-				CE0941AE1F4F852600FCB031 /* Box.swift */,
-				CEDCCDA21F3512EF00FA84DE /* Circle.swift */,
-				CEDCCDA41F35131F00FA84DE /* Text.swift */,
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
 		CC6CF3D48B06681D66F6DE20 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,24 +146,10 @@
 			children = (
 				CE7FE6961F4DC29E00A99882 /* AboutView.swift */,
 				CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */,
-				CE0941AC1F4F84A800FCB031 /* ARViewController.swift */,
-				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
 				CE0DC0261F4F770F001A0C99 /* progressView */,
-				CEE03E6E1F38FFB00051DC51 /* slider */,
-				113B64D01ECA81CA0071CBD1 /* UI Elements */,
-				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
+				CEE03E6E1F38FFB00051DC51 /* virtualObjectCollectionView */,
 			);
 			path = components;
-			sourceTree = "<group>";
-		};
-		CE0941AB1F4F83BD00FCB031 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C41366B81EB80DD400EC054A /* TextManager.swift */,
-				C4FBC02A1EC6438B003F7864 /* ARCameraTrackingState.swift */,
-				39C0B9581E9C6B1F003FCA0C /* Utilities.swift */,
-			);
-			path = helpers;
 			sourceTree = "<group>";
 		};
 		CE0DC0261F4F770F001A0C99 /* progressView */ = {
@@ -234,29 +161,54 @@
 			path = progressView;
 			sourceTree = "<group>";
 		};
-		CEE03E6E1F38FFB00051DC51 /* slider */ = {
+		CE4EBBDB1FF29F480038C175 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		CE4EBBDC1FF29F4F0038C175 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE3776D31F44FAEF007A3800 /* Assets.xcassets */,
+				CE0941AA1F4F80BD00FCB031 /* components */,
+				CE4EBBDE1FF29F8A0038C175 /* extensions */,
+				CEF225681F573B5100698C20 /* viewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE4EBBDE1FF29F8A0038C175 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
+				CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		CEE03E6E1F38FFB00051DC51 /* virtualObjectCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				CEE03E6C1F38FFA70051DC51 /* VirtualObjectCollectionView.swift */,
 				CEBC0D051F365550009D507E /* VirtualObjectCollectionViewCell.swift */,
-				CEDCCDA61F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift */,
 				CEE03E6F1F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift */,
 				CEE03E711F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift */,
 				CEE03E731F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift */,
 				CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */,
 			);
-			path = slider;
+			path = virtualObjectCollectionView;
 			sourceTree = "<group>";
 		};
-		CEF698BE1F46106A0017B0E7 /* extensions */ = {
+		CEF225681F573B5100698C20 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEE03E771F3903220051DC51 /* CollectionViewExtension.swift */,
-				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
-				CE0941B11F4F88AF00FCB031 /* UserDefaultsExtension.swift */,
-				CEEE97731F56186E008440AD /* ARSCNViewExtension.swift */,
+				CEBC515E1F41FF6800CAA7C1 /* PhotoViewController.swift */,
+				CEF2256C1F573FBD00698C20 /* MainViewController.swift */,
+				CEDCCDA61F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift */,
 			);
-			path = extensions;
+			path = viewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +277,6 @@
 			files = (
 				CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */,
 				CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */,
-				3929C49F1E89EE4400E00B60 /* Models.scnassets in Resources */,
 				39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */,
 				3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */,
 			);
@@ -344,6 +295,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -351,6 +303,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,34 +353,19 @@
 			files = (
 				CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */,
 				CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */,
-				39C0B9511E9C63CB003FCA0C /* HitTestVisualization.swift in Sources */,
-				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
-				CEEE97741F56186E008440AD /* ARSCNViewExtension.swift in Sources */,
 				CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */,
-				CEE03E781F3903220051DC51 /* CollectionViewExtension.swift in Sources */,
-				CE0941AD1F4F84A800FCB031 /* ARViewController.swift in Sources */,
 				CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */,
-				CE0941B21F4F88AF00FCB031 /* UserDefaultsExtension.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
+				CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */,
 				CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */,
-				CE0941AF1F4F852600FCB031 /* Box.swift in Sources */,
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
-				C41366B91EB80DD400EC054A /* TextManager.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
-				39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */,
-				392BB82C1EA19A7C00FBBAC8 /* Plane.swift in Sources */,
-				CEDCCDA31F3512EF00FA84DE /* Circle.swift in Sources */,
-				3987BEDC1E9E057F00167FAC /* Gesture.swift in Sources */,
-				C4E87DD91EA6B40F002117D6 /* VirtualObject.swift in Sources */,
-				39D4A8BE1EA1AF530006EC65 /* PlaneDebugVisualization.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,
-				CEDCCDA51F35131F00FA84DE /* Text.swift in Sources */,
+				CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */,
 				CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */,
-				C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */,
 				3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */,
-				C4FBC02B1EC6438B003F7864 /* ARCameraTrackingState.swift in Sources */,
 				CEBC515F1F41FF6800CAA7C1 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

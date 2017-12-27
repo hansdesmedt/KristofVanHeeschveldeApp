@@ -14,6 +14,9 @@ import Photos
 // bij tap
 // loadVirtualObject(at: index)?
 
+// Start the ARSession.
+//restartPlaneDetection()
+
 class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
   
   // MARK: - Main Setup & View Controller methods
@@ -30,9 +33,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     
     // Prevent the screen from being dimmed after a while.
     UIApplication.shared.isIdleTimerDisabled = true
-    
-    // Start the ARSession.
-    restartPlaneDetection()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -41,9 +41,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   }
   
   // MARK: - ARKit / ARSCNView
-  let session = ARSession()
-  var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
-  var use3DOFTracking = false {
+  private let session = ARSession()
+  private var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
+  private var use3DOFTracking = false {
     didSet {
       if use3DOFTracking {
         sessionConfig = ARWorldTrackingConfiguration()
@@ -52,11 +52,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
       session.run(sessionConfig)
     }
   }
-  var use3DOFTrackingFallback = false
-  @IBOutlet var sceneView: ARSCNView!
-  var screenCenter: CGPoint?
+  private var use3DOFTrackingFallback = false
+  @IBOutlet private var sceneView: ARSCNView!
+  private var screenCenter: CGPoint?
   
-  func setupScene() {
+  private func setupScene() {
     // set up sceneView
     sceneView.delegate = self
     sceneView.session = session
@@ -81,7 +81,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  func enableEnvironmentMapWithIntensity(_ intensity: CGFloat) {
+  private func enableEnvironmentMapWithIntensity(_ intensity: CGFloat) {
     if sceneView.scene.lightingEnvironment.contents == nil {
       if let environmentMap = UIImage(named: "Models.scnassets/sharedImages/environment_blur.exr") {
         sceneView.scene.lightingEnvironment.contents = environmentMap
@@ -131,7 +131,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  var trackingFallbackTimer: Timer?
+  private var trackingFallbackTimer: Timer?
   
   func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
     switch camera.trackingState {
@@ -176,12 +176,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   func sessionInterruptionEnded(_ session: ARSession) {
     session.run(sessionConfig, options: [.resetTracking, .removeExistingAnchors])
-    restartExperience(self)
+    restartExperience()
   }
   
   // MARK: - Ambient Light Estimation
   
-  func toggleAmbientLightEstimation(_ enabled: Bool) {
+  private func toggleAmbientLightEstimation(_ enabled: Bool) {
     
     if enabled {
       if !sessionConfig.isLightEstimationEnabled {
@@ -200,7 +200,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   // MARK: - Gesture Recognizers
   
-  var currentGesture: Gesture?
+  private var currentGesture: Gesture?
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let object = virtualObject else {
@@ -238,7 +238,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   // MARK: - Virtual Object Manipulation
   
-  func displayVirtualObjectTransform() {
+  private func displayVirtualObjectTransform() {
     guard let object = virtualObject else {
       return
     }
@@ -265,7 +265,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  var dragOnInfinitePlanesEnabled = false
+  private var dragOnInfinitePlanesEnabled = false
   
   func worldPositionFromScreenPosition(_ position: CGPoint,
                                        objectPos: SCNVector3?,
@@ -337,9 +337,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   }
   
   // Use average of recent virtual object distances to avoid rapid changes in object scale.
-  var recentVirtualObjectDistances = [CGFloat]()
+  private var recentVirtualObjectDistances = [CGFloat]()
   
-  func setNewVirtualObjectPosition(_ pos: SCNVector3) {
+  private func setNewVirtualObjectPosition(_ pos: SCNVector3) {
     
     guard let object = virtualObject, let cameraTransform = session.currentFrame?.camera.transform else {
       return
@@ -360,13 +360,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  func resetVirtualObject() {
+  private func resetVirtualObject() {
     virtualObject?.unloadModel()
     virtualObject?.removeFromParentNode()
     virtualObject = nil
   }
   
-  func updateVirtualObjectPosition(_ pos: SCNVector3, _ filterPosition: Bool) {
+  private func updateVirtualObjectPosition(_ pos: SCNVector3, _ filterPosition: Bool) {
     guard let object = virtualObject else {
       return
     }
@@ -403,7 +403,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
   }
   
-  func checkIfObjectShouldMoveOntoPlane(anchor: ARPlaneAnchor) {
+  private func checkIfObjectShouldMoveOntoPlane(anchor: ARPlaneAnchor) {
     guard let object = virtualObject, let planeAnchorNode = sceneView.node(for: anchor) else {
       return
     }
@@ -440,7 +440,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   // MARK: - Virtual Object Loading
   
-  var virtualObject: VirtualObject?
+  private var virtualObject: VirtualObject?
   
   func loadVirtualObject(at index: Int) {
     resetVirtualObject()
@@ -466,22 +466,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   
   // MARK: - Planes
   
-  var planes = [ARPlaneAnchor: Plane]()
+  private var planes = [ARPlaneAnchor: Plane]()
   
-  func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
+  private func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
     let plane = Plane(anchor, false)
     
     planes[anchor] = plane
     node.addChildNode(plane)
   }
   
-  func updatePlane(anchor: ARPlaneAnchor) {
+  private func updatePlane(anchor: ARPlaneAnchor) {
     if let plane = planes[anchor] {
       plane.update(anchor)
     }
   }
   
-  func removePlane(anchor: ARPlaneAnchor) {
+  private func removePlane(anchor: ARPlaneAnchor) {
     if let plane = planes.removeValue(forKey: anchor) {
       plane.removeFromParentNode()
     }
@@ -503,16 +503,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
   }
   
   // MARK: - Focus Square
-  var focusSquare: FocusSquare?
+  private var focusSquare: FocusSquare?
   
-  func setupFocusSquare() {
+  private func setupFocusSquare() {
     focusSquare?.isHidden = true
     focusSquare?.removeFromParentNode()
     focusSquare = FocusSquare()
     sceneView.scene.rootNode.addChildNode(focusSquare!)
   }
   
-  func updateFocusSquare() {
+  private func updateFocusSquare() {
     guard let screenCenter = screenCenter else { return }
     
     if virtualObject != nil && sceneView.isNode(virtualObject!, insideFrustumOf: sceneView.pointOfView!) {
@@ -525,52 +525,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
       focusSquare?.update(for: worldPos, planeAnchor: planeAnchor, camera: self.session.currentFrame?.camera)
     }
   }
-  
-  var restartExperienceButtonIsEnabled = true
-  
-  @IBAction func restartExperience(_ sender: Any) {
+
+  private func restartExperience() {
     DispatchQueue.main.async {
-      self.restartExperienceButtonIsEnabled = false
       self.use3DOFTracking = false
-      
       self.setupFocusSquare()
       self.resetVirtualObject()
       self.restartPlaneDetection()
-
-      // Disable Restart button for five seconds in order to give the session enough time to restart.
-      DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-        self.restartExperienceButtonIsEnabled = true
-      })
-    }
-  }
-  
-  @IBAction func takeScreenshot() {
-    let takeScreenshotBlock = {
-      UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
-      DispatchQueue.main.async {
-        // Briefly flash the screen.
-        let flashOverlay = UIView(frame: self.sceneView.frame)
-        flashOverlay.backgroundColor = UIColor.white
-        self.sceneView.addSubview(flashOverlay)
-        UIView.animate(withDuration: 0.25, animations: {
-          flashOverlay.alpha = 0.0
-        }, completion: { _ in
-          flashOverlay.removeFromSuperview()
-        })
-      }
-    }
-    
-    switch PHPhotoLibrary.authorizationStatus() {
-    case .authorized:
-      takeScreenshotBlock()
-    case .restricted, .denied:
-      return
-    case .notDetermined:
-      PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
-        if authorizationStatus == .authorized {
-          takeScreenshotBlock()
-        }
-      })
     }
   }
 }

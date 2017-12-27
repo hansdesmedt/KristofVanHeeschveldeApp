@@ -67,7 +67,7 @@ class VirtualObject: SCNNode {
 		guard let controller = viewController else {
 			return
 		}
-		
+
 		let result = controller.worldPositionFromScreenPosition(pos, objectPos: self.position, infinitePlane: infinitePlane)
 
 		controller.moveVirtualObjectToPosition(result.position, instantly, !result.hitAPlane)
@@ -90,6 +90,8 @@ extension VirtualObject {
 	
 	static let availableObjects: [VirtualObject] = [
 		Text(),
+    Text(),
+    Text(),
 	]
 }
 

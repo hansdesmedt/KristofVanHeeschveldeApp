@@ -10,6 +10,6 @@ target 'ARKitExample' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'PureLayout', '~> 3.0'
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'swift4.0'
-
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 end

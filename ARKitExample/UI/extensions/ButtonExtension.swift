@@ -30,11 +30,15 @@ extension UIView {
     backgroundColor = UIColor.black.withAlphaComponent(0.4)
   }
   
+  func isShown() -> Bool {
+    return self.superview != nil
+  }
+  
   func toggle(superView: UIView, x: CGFloat, y: CGFloat) {
     var t = CGAffineTransform.identity
     t = t.translatedBy(x: x, y: y)
     t = t.scaledBy(x: 0.01, y: 0.01)
-    if self.superview == nil {
+    if !isShown() {
       superView.addSubview(self)
       autoCenterInSuperview()
       transform = t

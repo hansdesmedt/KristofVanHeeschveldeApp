@@ -39,6 +39,8 @@
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
 		CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2256C1F573FBD00698C20 /* MainViewController.swift */; };
 		CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */; };
+		CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */; };
+		CEFFC3C81FF424F300815984 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C71FF424F300815984 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEF2256C1F573FBD00698C20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		CEFFC3C71FF424F300815984 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				CE0941AA1F4F80BD00FCB031 /* components */,
 				CE4EBBDE1FF29F8A0038C175 /* extensions */,
 				CEF225681F573B5100698C20 /* viewControllers */,
+				CEFFC3C71FF424F300815984 /* Database.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			children = (
 				CEF698BF1F46108D0017B0E7 /* ButtonExtension.swift */,
 				CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */,
+				CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -353,6 +360,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -407,6 +415,7 @@
 				CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */,
 				CE88C8B71FF3057100D285CB /* Plane.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
+				CEFFC3C81FF424F300815984 /* Database.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
 				CE88C8BA1FF3057100D285CB /* Gesture.swift in Sources */,
 				CEF698C01F46108D0017B0E7 /* ButtonExtension.swift in Sources */,
@@ -421,6 +430,7 @@
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
 				CE88C8C01FF3062E00D285CB /* VirtualObject.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
+				CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,
 				CE88C8BC1FF3057100D285CB /* ARCameraTrackingState.swift in Sources */,
 				CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */,

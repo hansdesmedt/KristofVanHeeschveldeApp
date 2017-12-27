@@ -28,6 +28,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     resetVirtualObject()
   }
   
+  var snapshot: UIImage {
+    return sceneView.snapshot()
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     

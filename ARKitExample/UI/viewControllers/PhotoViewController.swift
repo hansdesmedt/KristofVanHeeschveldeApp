@@ -9,28 +9,24 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
-
+  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var saveToDiskButton: UIButton!
   @IBOutlet weak var facebookDiskButton: UIButton!
   @IBOutlet weak var submitButton: UIButton!
   var image: UIImage?
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      imageView.image = image
-        // Do any additional setup after loading the view.
-      saveToDiskButton.layer.cornerRadius = 25
-      facebookDiskButton.layer.cornerRadius = 25
-      submitButton.layer.cornerRadius = 25
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    imageView.image = image
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
   @IBAction func saveToPhotos(_ sender: UIButton) {
     if let image = image {
       UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -42,19 +38,19 @@ class PhotoViewController: UIViewController {
     return true
   }
   
-//  switch PHPhotoLibrary.authorizationStatus() {
-//  case .authorized:
-//  takeScreenshotBlock()
-//  case .restricted, .denied:
-//  let title = "Photos access denied"
-//  let message = "Please enable Photos access for this application in Settings > Privacy to allow saving screenshots."
-//  textManager.showAlert(title: title, message: message)
-//  case .notDetermined:
-//  PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
-//  if authorizationStatus == .authorized {
-//  takeScreenshotBlock()
-//  }
-//  })
-//  }
-
+  //  switch PHPhotoLibrary.authorizationStatus() {
+  //  case .authorized:
+  //  takeScreenshotBlock()
+  //  case .restricted, .denied:
+  //  let title = "Photos access denied"
+  //  let message = "Please enable Photos access for this application in Settings > Privacy to allow saving screenshots."
+  //  textManager.showAlert(title: title, message: message)
+  //  case .notDetermined:
+  //  PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
+  //  if authorizationStatus == .authorized {
+  //  takeScreenshotBlock()
+  //  }
+  //  })
+  //  }
+  
 }

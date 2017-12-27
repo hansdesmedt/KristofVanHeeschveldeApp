@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -124,6 +125,7 @@
                         <outlet property="aboutView" destination="hGC-9n-QFu" id="3ib-RC-oDO"/>
                         <outlet property="appNumberButton" destination="OnA-go-Ul4" id="u5T-nK-anb"/>
                         <outlet property="appNumberView" destination="deE-DT-NW2" id="S1z-CC-XeX"/>
+                        <segue destination="aUb-Xd-2AT" kind="presentation" identifier="PhotoViewController" modalTransitionStyle="crossDissolve" id="Qp4-W6-yaM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -284,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktw-Af-yD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338" y="-1468"/>
+            <point key="canvasLocation" x="-650" y="-654"/>
         </scene>
         <!--Virtual Object Collection View Controller-->
         <scene sceneID="acj-Cn-DuD">
@@ -331,7 +333,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2P-jM-VTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1274.4000000000001" y="-972.86356821589209"/>
+            <point key="canvasLocation" x="-1910" y="-919"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="9zr-wy-tjF">
@@ -348,82 +350,65 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="24d-eq-kTT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkw-n3-9pr">
-                                <rect key="frame" x="10" y="30" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8Jg-9S-NBa"/>
-                                    <constraint firstAttribute="width" constant="50" id="Ze5-rM-5qz"/>
-                                </constraints>
-                                <state key="normal" image="icon_close"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-hu-2Iw">
+                                <rect key="frame" x="0.0" y="636" width="127.5" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du1-Sj-Shi">
+                                <rect key="frame" x="124" y="636" width="127.5" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Photo library"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fav-Pp-Rvi">
+                                <rect key="frame" x="247.5" y="636" width="127.5" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-RG-Jcx">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="dHy-K6-gE9" kind="unwind" unwindAction="unwindFromPhoto:" id="N3Z-0A-4lQ"/>
+                                    <segue destination="dHy-K6-gE9" kind="unwind" unwindAction="unwindFromPhoto:" id="yzL-gL-9l2"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-qz-S1V">
-                                <rect key="frame" x="315" y="607" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.30980392156862746" green="0.66666666666666663" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Hh6-LA-pZ1"/>
-                                    <constraint firstAttribute="height" constant="50" id="yoC-Sp-gv5"/>
-                                </constraints>
-                                <state key="normal" title="&gt;"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-p9-bi1">
-                                <rect key="frame" x="10" y="607" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.30980392159999998" green="0.66666666669999997" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="1yv-wu-wOV"/>
-                                    <constraint firstAttribute="height" constant="50" id="G6R-hM-W6d"/>
-                                </constraints>
-                                <state key="normal" image="icon_disk"/>
-                                <connections>
-                                    <action selector="saveToPhotos:" destination="aUb-Xd-2AT" eventType="touchUpInside" id="0i3-By-XCw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-5Q-Ohs">
-                                <rect key="frame" x="70" y="607" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.30980392159999998" green="0.66666666669999997" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9xR-pI-ffe"/>
-                                    <constraint firstAttribute="width" constant="50" id="Inl-45-f3r"/>
-                                </constraints>
-                                <state key="normal" image="icon_facebook"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Lpv-hu-2Iw" secondAttribute="bottom" id="1xJ-qj-5WQ"/>
                             <constraint firstItem="24d-eq-kTT" firstAttribute="top" secondItem="klh-Gw-E2L" secondAttribute="top" id="5sF-cD-LJU"/>
                             <constraint firstItem="24d-eq-kTT" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" id="7Me-5L-AL6"/>
+                            <constraint firstItem="Lpv-hu-2Iw" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" id="BhT-2d-wdh"/>
+                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="top" secondItem="klh-Gw-E2L" secondAttribute="top" id="Ghc-nU-c1L"/>
+                            <constraint firstItem="du1-Sj-Shi" firstAttribute="centerX" secondItem="klh-Gw-E2L" secondAttribute="centerX" id="Gla-mm-8uE"/>
                             <constraint firstAttribute="trailing" secondItem="24d-eq-kTT" secondAttribute="trailing" id="J1M-Lj-D6X"/>
-                            <constraint firstAttribute="trailing" secondItem="JtU-qz-S1V" secondAttribute="trailing" constant="10" id="OOM-OJ-HeY"/>
-                            <constraint firstItem="sAg-5Q-Ohs" firstAttribute="leading" secondItem="8PI-p9-bi1" secondAttribute="trailing" constant="10" id="TLJ-Nq-c6d"/>
-                            <constraint firstItem="fkw-n3-9pr" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" constant="10" id="a86-kI-oL4"/>
-                            <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="sAg-5Q-Ohs" secondAttribute="bottom" constant="10" id="h9B-6o-nRJ"/>
-                            <constraint firstItem="8PI-p9-bi1" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" constant="10" id="ozk-1A-bes"/>
+                            <constraint firstAttribute="trailing" secondItem="fav-Pp-Rvi" secondAttribute="trailing" id="bV4-Tx-UOE"/>
+                            <constraint firstItem="fav-Pp-Rvi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="elM-y9-RC9"/>
+                            <constraint firstAttribute="bottom" secondItem="du1-Sj-Shi" secondAttribute="bottom" id="fWv-5c-4LT"/>
+                            <constraint firstItem="Lpv-hu-2Iw" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="g03-3R-Imu"/>
+                            <constraint firstAttribute="bottom" secondItem="fav-Pp-Rvi" secondAttribute="bottom" id="kGU-w0-sOF"/>
+                            <constraint firstItem="du1-Sj-Shi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="lpY-T7-TdP"/>
                             <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="24d-eq-kTT" secondAttribute="bottom" id="pnN-tP-EQj"/>
-                            <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="JtU-qz-S1V" secondAttribute="bottom" constant="10" id="qyR-Tf-pYv"/>
-                            <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="8PI-p9-bi1" secondAttribute="bottom" constant="10" id="wO0-Av-JEP"/>
-                            <constraint firstItem="fkw-n3-9pr" firstAttribute="top" secondItem="umV-cc-m49" secondAttribute="bottom" constant="10" id="ztk-bj-h25"/>
+                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" id="qSj-w2-09f"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="facebookDiskButton" destination="sAg-5Q-Ohs" id="ReB-Kg-187"/>
                         <outlet property="imageView" destination="24d-eq-kTT" id="KkD-9h-lKU"/>
-                        <outlet property="saveToDiskButton" destination="8PI-p9-bi1" id="TfO-fm-A2b"/>
-                        <outlet property="submitButton" destination="JtU-qz-S1V" id="L0Q-4u-gr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vh-Eq-Jfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dHy-K6-gE9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="-1566"/>
+            <point key="canvasLocation" x="-186" y="-1464"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icon_close" width="75" height="75"/>
-        <image name="icon_disk" width="75" height="75"/>
-        <image name="icon_facebook" width="75" height="75"/>
         <image name="selector" width="77" height="77"/>
         <image name="selector_icon" width="77" height="77"/>
     </resources>

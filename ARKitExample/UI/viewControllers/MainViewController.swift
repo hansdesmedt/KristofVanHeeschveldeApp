@@ -22,11 +22,37 @@ class MainViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? ViewController {
       self.viewController = viewController
+    } else if let viewController = segue.destination as? VirtualObjectCollectionViewController {
+      viewController.takeScreenshot.subscribe(onNext: { _ in
+        if let photoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController, let viewController = self.viewController {
+          photoViewController.image = viewController.snapshot
+          photoViewController.modalTransitionStyle = .crossDissolve
+          self.present(photoViewController, animated: true, completion: nil)
+        }
+        
+      }).disposed(by: disposeBag)
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    let database = FirebaseDatabase.sharedInstance
+    database.numberInstalled
+      .flatMap({ (number) -> Observable<UInt> in
+        if let number = number {
+          return Observable.just(number)
+        }
+        return database.setNumberInstalled()
+      })
+      .subscribe(onNext: { (number) in
+        self.appNumberButton.setTitle("APP: \(number)/100", for: UIControlState.normal)
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
     let defaults = UserDefaults.standard
     if (!defaults.bool(for: .firstRunCompleted)) {
@@ -45,19 +71,6 @@ class MainViewController: UIViewController {
     } else {
       viewController?.restartPlaneDetection()
     }
-    
-    let database = FirebaseDatabase.sharedInstance
-    database.numberInstalled
-      .flatMap({ (number) -> Observable<UInt> in
-        if let number = number {
-          return Observable.just(number)
-        }
-        return database.setNumberInstalled()
-      })
-      .subscribe(onNext: { (number) in
-        self.appNumberButton.setTitle("APP: \(number)/100", for: UIControlState.normal)
-      })
-      .disposed(by: disposeBag)
   }
   
   @IBAction func onboardingPressed(_ sender: UIButton) {

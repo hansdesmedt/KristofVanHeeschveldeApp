@@ -78,7 +78,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentation
     }
     
     if let camera = sceneView.pointOfView?.camera {
-      camera.wantsHDR = true
       camera.wantsExposureAdaptation = true
       camera.exposureOffset = -1
       camera.minimumExposure = -1

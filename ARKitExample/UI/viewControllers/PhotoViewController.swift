@@ -34,6 +34,16 @@ class PhotoViewController: UIViewController {
     }
   }
   
+  @IBAction func submit(_ sender: UIButton) {
+    if let image = image, let data = UIImageJPEGRepresentation(image, 1.0) {
+      AppDelegate.cloudanary.createUploader().upload(data: data, uploadPreset: AppDelegate.uploadPreset, progress: nil) { (result, error) in
+        if let error = error {
+          print("Error uploading image %@", error)
+        }
+      }
+    }
+  }
+  
   override var prefersStatusBarHidden: Bool {
     return true
   }

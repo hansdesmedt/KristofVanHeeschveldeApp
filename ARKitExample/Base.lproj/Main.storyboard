@@ -351,22 +351,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-hu-2Iw">
-                                <rect key="frame" x="0.0" y="636" width="127.5" height="31"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="636" width="124" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <state key="normal" title="Facebook"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du1-Sj-Shi">
-                                <rect key="frame" x="124" y="636" width="127.5" height="31"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="126" y="636" width="123.5" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <state key="normal" title="Photo library"/>
+                                <state key="normal" title="Photo library">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveToPhotos:" destination="aUb-Xd-2AT" eventType="touchUpInside" id="QBx-uN-4if"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fav-Pp-Rvi">
-                                <rect key="frame" x="247.5" y="636" width="127.5" height="31"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="251.5" y="636" width="123.5" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="aUb-Xd-2AT" eventType="touchUpInside" id="Vhr-B6-d1O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-RG-Jcx">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
@@ -389,11 +401,11 @@
                             <constraint firstItem="du1-Sj-Shi" firstAttribute="centerX" secondItem="klh-Gw-E2L" secondAttribute="centerX" id="Gla-mm-8uE"/>
                             <constraint firstAttribute="trailing" secondItem="24d-eq-kTT" secondAttribute="trailing" id="J1M-Lj-D6X"/>
                             <constraint firstAttribute="trailing" secondItem="fav-Pp-Rvi" secondAttribute="trailing" id="bV4-Tx-UOE"/>
-                            <constraint firstItem="fav-Pp-Rvi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="elM-y9-RC9"/>
+                            <constraint firstItem="fav-Pp-Rvi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.33" id="elM-y9-RC9"/>
                             <constraint firstAttribute="bottom" secondItem="du1-Sj-Shi" secondAttribute="bottom" id="fWv-5c-4LT"/>
-                            <constraint firstItem="Lpv-hu-2Iw" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="g03-3R-Imu"/>
+                            <constraint firstItem="Lpv-hu-2Iw" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.33" id="g03-3R-Imu"/>
                             <constraint firstAttribute="bottom" secondItem="fav-Pp-Rvi" secondAttribute="bottom" id="kGU-w0-sOF"/>
-                            <constraint firstItem="du1-Sj-Shi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.34" id="lpY-T7-TdP"/>
+                            <constraint firstItem="du1-Sj-Shi" firstAttribute="width" secondItem="24d-eq-kTT" secondAttribute="width" multiplier="0.33" id="lpY-T7-TdP"/>
                             <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="24d-eq-kTT" secondAttribute="bottom" id="pnN-tP-EQj"/>
                             <constraint firstItem="xJt-RG-Jcx" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" id="qSj-w2-09f"/>
                         </constraints>

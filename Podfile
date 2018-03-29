@@ -12,4 +12,5 @@ target 'ARKitExample' do
   pod 'PureLayout', '~> 3.0'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'Cloudinary', '~> 2.2'
 end

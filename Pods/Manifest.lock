@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.6.0)
+  - Cloudinary (2.2.2):
+    - Alamofire (~> 4.6.0)
   - Firebase/Auth (4.0.4):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -52,6 +55,7 @@ PODS:
   - RxSwift (4.0.0)
 
 DEPENDENCIES:
+  - Cloudinary (~> 2.2)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
@@ -60,6 +64,8 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Cloudinary: 5dff38fd3a8d3277ef05ced910a6bc567738dddb
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -74,6 +80,6 @@ SPEC CHECKSUMS:
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
 
-PODFILE CHECKSUM: d5f44459b516cb38e6d2d91f76f79b4234a7fde7
+PODFILE CHECKSUM: e1359fe4cabce1ee41b16aa4f1b86a3ff40325a3
 
 COCOAPODS: 1.3.1

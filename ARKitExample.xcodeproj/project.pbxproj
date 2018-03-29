@@ -13,6 +13,7 @@
 		5C57DAB0898D81DB6FB7141F /* Pods_ARKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C533E22606970BDC95715F /* Pods_ARKitExample.framework */; };
 		CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A61F4F775100FCB031 /* CircleProgressView.h */; };
 		CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A51F4F775100FCB031 /* CircleProgressView.m */; };
+		CE45ABCA206D7E96002FE956 /* AppDelegate+config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */; };
 		CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
 		CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6961F4DC29E00A99882 /* AboutView.swift */; };
@@ -58,6 +59,7 @@
 		CE0941A61F4F775100FCB031 /* CircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
 		CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+config.swift"; sourceTree = "<group>"; };
 		CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtensions.swift; path = ARKitExample/UI/extensions/UICollectionViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		CE7FE6961F4DC29E00A99882 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNumberView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				CE88C8A61FF3057100D285CB /* AR */,
 				CE4EBBDC1FF29F4F0038C175 /* UI */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
+				CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */,
 				CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */,
 				CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */,
 				3929C4971E89EC2C00E00B60 /* Info.plist */,
@@ -348,6 +351,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitExample/Pods-ARKitExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
@@ -357,6 +362,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
@@ -429,6 +436,7 @@
 				CE88C8B31FF3057100D285CB /* ViewController.swift in Sources */,
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
 				CE88C8C01FF3062E00D285CB /* VirtualObject.swift in Sources */,
+				CE45ABCA206D7E96002FE956 /* AppDelegate+config.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
 				CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,

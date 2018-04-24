@@ -21,6 +21,11 @@ extension UIView {
     clipsToBounds = true
   }
   
+  func roundCorners5() {
+    layer.cornerRadius = 5
+    clipsToBounds = true
+  }
+  
   func whiteBorders() {
     layer.borderWidth = 1
     layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
@@ -34,23 +39,14 @@ extension UIView {
     return self.superview != nil
   }
   
-  func toggle(superView: UIView, x: CGFloat, y: CGFloat) {
+  func toggle(superView: UIView, x: CGFloat, y: CGFloat, delay: TimeInterval = 0) {
     var t = CGAffineTransform.identity
     t = t.translatedBy(x: x, y: y)
     t = t.scaledBy(x: 0.01, y: 0.01)
     if !isShown() {
-      superView.addSubview(self)
-      autoCenterInSuperview()
-      transform = t
-      UIView.animate(withDuration: 0.3) {
-        self.transform = CGAffineTransform.identity
-      }
+
     } else {
-      UIView.animate(withDuration: 0.3, animations: {
-        self.transform = t
-      }, completion: { _ in
-        self.removeFromSuperview()
-      })
+
     }
   }
 }

@@ -49,16 +49,16 @@ final class FirebaseDatabase {
     })
   }
   
-  var numberInstalled: Observable<UInt?> {
-    return login().flatMap({ _ -> Observable<UInt?> in
+  var numberInstalled: Observable<UInt> {
+    return login().flatMap({ _ -> Observable<UInt> in
       guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
         return Observable.error(FirebaseDatabaseError.uuidFailed)
       }
-      return self.getSnapshotPath(path: "installs/\(uuid)").map({ (snapshot) -> UInt? in
+      return self.getSnapshotPath(path: "installs/\(uuid)").flatMap({ (snapshot) -> Observable<UInt> in
         if let value = snapshot.value as? UInt {
-          return value
+          return Observable.of(value)
         }
-        return nil
+        return self.setNumberInstalled()
       })
     })
   }

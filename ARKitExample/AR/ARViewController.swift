@@ -17,7 +17,7 @@ import Photos
 // Start the ARSession.
 //restartPlaneDetection()
 
-class ViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
+class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
   
   // MARK: - Main Setup & View Controller methods
   override func viewDidLoad() {

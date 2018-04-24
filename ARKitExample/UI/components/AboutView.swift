@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import RxSwift
 
-class AboutView: UIView {
-
+class AboutView: PopupView {
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    originX = -155
+    originY = -285
+    makeTransformations()
+  }
+  
+  private let disposeBag = DisposeBag()
+  
   @IBOutlet weak var blurView: UIVisualEffectView!
   @IBOutlet weak var giveAccessButton: UIButton!
   
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    blurView.roundCorners10()
-    giveAccessButton.roundCorners23()
-    giveAccessButton.whiteBorders()
-    giveAccessButton.blackBackground()
+    giveAccessButton.rx.tap
+      .subscribe(){ [weak self] _ in self?.hide() }
+      .disposed(by: disposeBag)
+    
+    blurView.roundCorners5()
   }
 }

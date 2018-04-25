@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import RxSwift
 
 class AboutView: PopupView {
+  
+  @IBOutlet weak var contentLabel: UILabel!
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -18,18 +19,9 @@ class AboutView: PopupView {
     makeTransformations()
   }
   
-  private let disposeBag = DisposeBag()
-  
-  @IBOutlet weak var blurView: UIVisualEffectView!
-  @IBOutlet weak var giveAccessButton: UIButton!
-  
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    giveAccessButton.rx.tap
-      .subscribe(){ [weak self] _ in self?.hide() }
-      .disposed(by: disposeBag)
-    
-    blurView.roundCorners5()
+    contentLabel.attributedText = NSAttributedString.body(string: "Nulla condimentum velit arcu, sit amet elementum felis luctus a. Aliquam laoreet, elit et fringilla fermentum, urna sapien rhoncus leo, ut auctor nisi nunc at libero. Donec pharetra eros vitae aliquam tempor. Nullam viverra purus quis enim maximus, ac mollis lacus varius.")
   }
 }

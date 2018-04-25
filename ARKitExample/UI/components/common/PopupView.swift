@@ -11,6 +11,8 @@ import PureLayout
 
 class PopupView: UIView {
   
+  @IBOutlet weak var okButton: UIButton!
+  
   var tansformations = CGAffineTransform.identity
   var originX:CGFloat = 0
   var originY:CGFloat = 0
@@ -21,23 +23,24 @@ class PopupView: UIView {
     tansformations = tansformations.scaledBy(x: 0.01, y: 0.01)
   }
   
+  func show(view:UIView) {
+    alpha = 0
+    view.addSubview(self)
+    autoAlignAxis(ALAxis.horizontal, toSameAxisOf: view, withOffset: -40)
+    autoAlignAxis(ALAxis.vertical, toSameAxisOf: view, withOffset: 0)
+    transform = tansformations
+    UIView.animate(withDuration: 0.3) {
+      self.transform = CGAffineTransform.identity
+      self.alpha = 1
+    }
+  }
+  
   func hide() {
     UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+      self.alpha = 0
       self.transform = self.tansformations
     }, completion: { _ in
       self.removeFromSuperview()
     })
-  }
-  
-  func show(view:UIView) {
-    view.addSubview(self)
-    if let otherView = self.superview {
-      autoAlignAxis(ALAxis.horizontal, toSameAxisOf: otherView, withOffset: -40)
-      autoAlignAxis(ALAxis.vertical, toSameAxisOf: otherView, withOffset: 0)
-    }
-    transform = tansformations
-    UIView.animate(withDuration: 0.3) {
-      self.transform = CGAffineTransform.identity
-    }
   }
 }

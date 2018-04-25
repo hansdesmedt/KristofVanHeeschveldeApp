@@ -16,6 +16,12 @@
 		CE45ABCA206D7E96002FE956 /* AppDelegate+config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */; };
 		CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
+		CE6A265A2091005600BF9AFF /* BlackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A26592091005600BF9AFF /* BlackView.swift */; };
+		CE6A265E20910ED600BF9AFF /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A265D20910ED500BF9AFF /* UIFontExtensions.swift */; };
+		CE6A266020910F6600BF9AFF /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A265F20910F6600BF9AFF /* NSAttributedStringExtensions.swift */; };
+		CE6A26622091172B00BF9AFF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A26612091172B00BF9AFF /* CustomButton.swift */; };
+		CE6A266420911EEE00BF9AFF /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A266320911EEE00BF9AFF /* ConfirmButton.swift */; };
+		CE6A266620911FC800BF9AFF /* PopupVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A266520911FC800BF9AFF /* PopupVisualEffectView.swift */; };
 		CE7FE6971F4DC29E00A99882 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6961F4DC29E00A99882 /* AboutView.swift */; };
 		CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */; };
 		CE82F6A7208FC887004F42CB /* TotalSubmitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82F6A6208FC887004F42CB /* TotalSubmitsView.swift */; };
@@ -42,7 +48,7 @@
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
 		CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2256C1F573FBD00698C20 /* MainViewController.swift */; };
-		CEF698C01F46108D0017B0E7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ViewExtension.swift */; };
+		CEF698C01F46108D0017B0E7 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ViewExtensions.swift */; };
 		CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */; };
 		CEFFC3C81FF424F300815984 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C71FF424F300815984 /* Database.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,12 @@
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+config.swift"; sourceTree = "<group>"; };
 		CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtensions.swift; path = ARKitExample/UI/extensions/UICollectionViewExtensions.swift; sourceTree = SOURCE_ROOT; };
+		CE6A26592091005600BF9AFF /* BlackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackView.swift; sourceTree = "<group>"; };
+		CE6A265D20910ED500BF9AFF /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		CE6A265F20910F6600BF9AFF /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		CE6A26612091172B00BF9AFF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CE6A266320911EEE00BF9AFF /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		CE6A266520911FC800BF9AFF /* PopupVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVisualEffectView.swift; sourceTree = "<group>"; };
 		CE7FE6961F4DC29E00A99882 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNumberView.swift; sourceTree = "<group>"; };
 		CE82F6A6208FC887004F42CB /* TotalSubmitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSubmitsView.swift; sourceTree = "<group>"; };
@@ -90,7 +102,7 @@
 		CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEF2256C1F573FBD00698C20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CEF698BF1F46108D0017B0E7 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		CEF698BF1F46108D0017B0E7 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		CEFFC3C71FF424F300815984 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,13 +191,10 @@
 		CE0941AA1F4F80BD00FCB031 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A265C20910D5C00BF9AFF /* common */,
+				CE6A265B20910D4000BF9AFF /* popups */,
 				CE0DC0261F4F770F001A0C99 /* progressView */,
 				CEE03E6E1F38FFB00051DC51 /* virtualObjectCollectionView */,
-				CE7FE6961F4DC29E00A99882 /* AboutView.swift */,
-				CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */,
-				CE82F6A8208FC896004F42CB /* RemainingTimeView.swift */,
-				CE82F6A6208FC887004F42CB /* TotalSubmitsView.swift */,
-				CE82F6AA208FD776004F42CB /* PopupView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -214,11 +223,36 @@
 		CE4EBBDE1FF29F8A0038C175 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A265F20910F6600BF9AFF /* NSAttributedStringExtensions.swift */,
 				CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */,
+				CE6A265D20910ED500BF9AFF /* UIFontExtensions.swift */,
 				CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */,
-				CEF698BF1F46108D0017B0E7 /* ViewExtension.swift */,
+				CEF698BF1F46108D0017B0E7 /* ViewExtensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		CE6A265B20910D4000BF9AFF /* popups */ = {
+			isa = PBXGroup;
+			children = (
+				CE7FE6961F4DC29E00A99882 /* AboutView.swift */,
+				CE7FE6981F4DCBBF00A99882 /* AppNumberView.swift */,
+				CE82F6A8208FC896004F42CB /* RemainingTimeView.swift */,
+				CE82F6A6208FC887004F42CB /* TotalSubmitsView.swift */,
+			);
+			path = popups;
+			sourceTree = "<group>";
+		};
+		CE6A265C20910D5C00BF9AFF /* common */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A26592091005600BF9AFF /* BlackView.swift */,
+				CE6A266320911EEE00BF9AFF /* ConfirmButton.swift */,
+				CE6A26612091172B00BF9AFF /* CustomButton.swift */,
+				CE82F6AA208FD776004F42CB /* PopupView.swift */,
+				CE6A266520911FC800BF9AFF /* PopupVisualEffectView.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		CE88C8A61FF3057100D285CB /* AR */ = {
@@ -427,6 +461,8 @@
 			files = (
 				CE88C8B91FF3057100D285CB /* HitTestVisualization.swift in Sources */,
 				CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */,
+				CE6A266420911EEE00BF9AFF /* ConfirmButton.swift in Sources */,
+				CE6A266020910F6600BF9AFF /* NSAttributedStringExtensions.swift in Sources */,
 				CE88C8B81FF3057100D285CB /* FocusSquare.swift in Sources */,
 				CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */,
 				CE88C8B71FF3057100D285CB /* Plane.swift in Sources */,
@@ -434,14 +470,17 @@
 				CEFFC3C81FF424F300815984 /* Database.swift in Sources */,
 				CEE03E721F3901440051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontal.swift in Sources */,
 				CE88C8BA1FF3057100D285CB /* Gesture.swift in Sources */,
-				CEF698C01F46108D0017B0E7 /* ViewExtension.swift in Sources */,
+				CEF698C01F46108D0017B0E7 /* ViewExtensions.swift in Sources */,
 				CE82F6A7208FC887004F42CB /* TotalSubmitsView.swift in Sources */,
 				CEDCCDA71F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift in Sources */,
 				CE88C8BB1FF3057100D285CB /* Text.swift in Sources */,
 				CE88C8B51FF3057100D285CB /* Utilities.swift in Sources */,
+				CE6A265A2091005600BF9AFF /* BlackView.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
 				CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */,
 				CE88C8B61FF3057100D285CB /* PlaneDebugVisualization.swift in Sources */,
+				CE6A265E20910ED600BF9AFF /* UIFontExtensions.swift in Sources */,
+				CE6A26622091172B00BF9AFF /* CustomButton.swift in Sources */,
 				CEBC0D061F365550009D507E /* VirtualObjectCollectionViewCell.swift in Sources */,
 				CE88C8B31FF3057100D285CB /* ARViewController.swift in Sources */,
 				CEE03E701F38FFFA0051DC51 /* VirtualObjectCollectionViewFlowLayout.swift in Sources */,
@@ -450,6 +489,7 @@
 				CE45ABCA206D7E96002FE956 /* AppDelegate+config.swift in Sources */,
 				CEE03E741F3901D10051DC51 /* VirtualObjectCollectionViewFlowLayoutHorizontalFullscreen.swift in Sources */,
 				CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */,
+				CE6A266620911FC800BF9AFF /* PopupVisualEffectView.swift in Sources */,
 				CE82F6AB208FD776004F42CB /* PopupView.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,
 				CE88C8BC1FF3057100D285CB /* ARCameraTrackingState.swift in Sources */,

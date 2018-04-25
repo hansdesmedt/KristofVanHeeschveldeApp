@@ -11,16 +11,20 @@ import RxSwift
 import RxCocoa
 
 class MainViewController: UIViewController {
-
+  
   private let disposeBag = DisposeBag()
   private var ARViewController: ARViewController?
-  private var activeView: UIView?
+  private let blackView = BlackView(frame: CGRect.zero)
   
   @IBOutlet var aboutView: AboutView!
   @IBOutlet var appNumberView: AppNumberView!
   @IBOutlet var remainingTimeView: RemainingTimeView!
   @IBOutlet var totalSubmitsView: TotalSubmitsView!
+  
+  @IBOutlet weak var aboutButton: UIButton!
   @IBOutlet weak var appNumberButton: UIButton!
+  @IBOutlet weak var remainingTimeButton: UIButton!
+  @IBOutlet weak var totalSubmitsButton: UIButton!
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? ARViewController {
@@ -40,16 +44,11 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    aboutView.giveAccessButton.rx.tap
-//      .debounce(0.5, scheduler: MainScheduler.instance)
-//      .subscribe(){ [weak self] _ in
-//        self?.ARViewController?.restartPlaneDetection()
-//        if let view = self?.view {
-//          self?.aboutView.toggle(superView: view, x: -155, y: -285)
-//        }
-//      }
-//      .disposed(by: disposeBag)
-
+    bind(aboutButton, aboutView)
+    bind(appNumberButton, appNumberView)
+    bind(remainingTimeButton, remainingTimeView)
+    bind(totalSubmitsButton, totalSubmitsView)
+    
     FirebaseDatabase.sharedInstance.numberInstalled
       .map({ (number) -> NSAttributedString in return NSAttributedString(string: "APP: \(number)/100")})
       .bind(to: appNumberButton.rx.attributedTitle())
@@ -68,25 +67,23 @@ class MainViewController: UIViewController {
     }
   }
   
-  @IBAction func onboardingPressed(_ sender: UIButton) {
-    aboutView.show(view: self.view)
-//    aboutView.toggle(superView: view, x: -155, y: -285)
-//    if appNumberView.isShown() {
-//      appNumberView.toggle(superView: view, x: 0, y: -285)
-//    }
-  }
-  
-  @IBAction func numberAppPressed(_ sender: UIButton) {
-//    appNumberView.toggle(superView: view, x: 0, y: -285)
-//    if aboutView.isShown() {
-//      aboutView.toggle(superView: view, x: -155, y: -285)
-//    }
+  private func bind(_ button: UIButton, _ popupView: PopupView) {
+    button.rx.tap.subscribe() { [weak self] _ in
+      guard let view = self?.view, let blackView = self?.blackView else { return }
+      blackView.show(view: view)
+      popupView.show(view: view)
+      }
+      .disposed(by: disposeBag)
+    
+    popupView.okButton.rx.tap.subscribe() { [weak self] _ in
+      guard let blackView = self?.blackView else { return }
+      blackView.hide()
+      popupView.hide()
+      }
+      .disposed(by: disposeBag)
   }
   
   @IBAction func unwindFromPhoto(_ segue: UIStoryboardSegue) {
-  }
-  
-  @IBAction func unwindFromInfo(_ segue: UIStoryboardSegue) {
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {

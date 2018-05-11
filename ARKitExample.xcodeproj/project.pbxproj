@@ -14,6 +14,8 @@
 		CE0941A71F4F78B800FCB031 /* CircleProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A61F4F775100FCB031 /* CircleProgressView.h */; };
 		CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0941A51F4F775100FCB031 /* CircleProgressView.m */; };
 		CE45ABCA206D7E96002FE956 /* AppDelegate+config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */; };
+		CE53197A20A5C141000B3F1D /* Text2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53197920A5C141000B3F1D /* Text2.swift */; };
+		CE53197C20A5C95B000B3F1D /* Text3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53197B20A5C95B000B3F1D /* Text3.swift */; };
 		CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */; };
 		CE625C8E1F44FDB300F485E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3776D31F44FAEF007A3800 /* Assets.xcassets */; };
 		CE6A265A2091005600BF9AFF /* BlackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A26592091005600BF9AFF /* BlackView.swift */; };
@@ -69,6 +71,8 @@
 		CE0941B01F4F861800FCB031 /* ARKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE3776D31F44FAEF007A3800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE45ABC9206D7E96002FE956 /* AppDelegate+config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+config.swift"; sourceTree = "<group>"; };
+		CE53197920A5C141000B3F1D /* Text2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text2.swift; sourceTree = "<group>"; };
+		CE53197B20A5C95B000B3F1D /* Text3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text3.swift; sourceTree = "<group>"; };
 		CE5F88091FF3010A00A09D92 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtensions.swift; path = ARKitExample/UI/extensions/UICollectionViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		CE6A26592091005600BF9AFF /* BlackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackView.swift; sourceTree = "<group>"; };
 		CE6A265D20910ED500BF9AFF /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 			children = (
 				CE88C8BF1FF3062E00D285CB /* VirtualObject.swift */,
 				CE88C8B11FF3057100D285CB /* Text.swift */,
+				CE53197920A5C141000B3F1D /* Text2.swift */,
+				CE53197B20A5C95B000B3F1D /* Text3.swift */,
 			);
 			path = "Virtual Objects";
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				CE6A266020910F6600BF9AFF /* NSAttributedStringExtensions.swift in Sources */,
 				CE88C8B81FF3057100D285CB /* FocusSquare.swift in Sources */,
 				CE0941A81F4F78B800FCB031 /* CircleProgressView.m in Sources */,
+				CE53197C20A5C95B000B3F1D /* Text3.swift in Sources */,
 				CE88C8B71FF3057100D285CB /* Plane.swift in Sources */,
 				CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */,
 				CEFFC3C81FF424F300815984 /* Database.swift in Sources */,
@@ -476,6 +483,7 @@
 				CE88C8BB1FF3057100D285CB /* Text.swift in Sources */,
 				CE88C8B51FF3057100D285CB /* Utilities.swift in Sources */,
 				CE6A265A2091005600BF9AFF /* BlackView.swift in Sources */,
+				CE53197A20A5C141000B3F1D /* Text2.swift in Sources */,
 				CEE03E6D1F38FFA70051DC51 /* VirtualObjectCollectionView.swift in Sources */,
 				CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */,
 				CE88C8B61FF3057100D285CB /* PlaneDebugVisualization.swift in Sources */,

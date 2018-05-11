@@ -90,8 +90,8 @@ extension VirtualObject {
 	
 	static let availableObjects: [VirtualObject] = [
 		Text(),
-    Text(),
-    Text(),
+    Text2(),
+    Text3(),
 	]
 }
 

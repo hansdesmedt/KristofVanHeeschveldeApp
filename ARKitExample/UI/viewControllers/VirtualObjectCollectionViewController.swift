@@ -35,9 +35,6 @@ class VirtualObjectCollectionViewController: UICollectionViewController {
     let object = VirtualObject.availableObjects[indexPath.row]
     if let  thumbnailImage = object.thumbImage {
       cell.imageView.image = thumbnailImage
-      cell.imageView.layer.cornerRadius = 33
-      cell.imageView.clipsToBounds = true
-      cell.imageView.alpha = 0.5
     }
     
     // Configure the cell

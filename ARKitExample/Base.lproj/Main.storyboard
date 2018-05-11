@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3H-cE-tdV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="83.5" width="375" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z3H-cE-tdV" secondAttribute="height" multiplier="3:4" id="i2b-hw-Vvy"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="3pv-vN-DnK" kind="embed" identifier="ViewController" id="tgU-8X-ubu"/>
                                 </connections>
@@ -90,12 +94,12 @@
                             <constraint firstAttribute="trailing" secondItem="oQ5-UV-hoL" secondAttribute="trailing" constant="16" id="JvJ-VZ-jzK"/>
                             <constraint firstItem="FgI-EJ-ihh" firstAttribute="centerX" secondItem="7Cp-Cs-hcg" secondAttribute="centerX" id="Lwe-Ij-F9O"/>
                             <constraint firstItem="As2-pN-hEV" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="P4K-ye-hst"/>
-                            <constraint firstAttribute="bottom" secondItem="z3H-cE-tdV" secondAttribute="bottom" id="P5I-lW-S2d"/>
                             <constraint firstItem="2Ns-cN-KSx" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" constant="5" id="R5W-ai-5fg"/>
-                            <constraint firstItem="z3H-cE-tdV" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="R70-ve-ZjG"/>
                             <constraint firstItem="z3H-cE-tdV" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="VLz-cx-oth"/>
                             <constraint firstItem="OnA-go-Ul4" firstAttribute="centerX" secondItem="RLh-bf-1c3" secondAttribute="centerX" id="ZnI-zd-pLT"/>
+                            <constraint firstItem="z3H-cE-tdV" firstAttribute="centerX" secondItem="RLh-bf-1c3" secondAttribute="centerX" id="elg-lI-MC2"/>
                             <constraint firstItem="OnA-go-Ul4" firstAttribute="centerY" secondItem="2Ns-cN-KSx" secondAttribute="centerY" id="hjy-2V-Bzu"/>
+                            <constraint firstItem="z3H-cE-tdV" firstAttribute="centerY" secondItem="RLh-bf-1c3" secondAttribute="centerY" id="jEi-di-vin"/>
                             <constraint firstAttribute="trailing" secondItem="FgI-EJ-ihh" secondAttribute="trailing" id="jry-dI-cK4"/>
                             <constraint firstAttribute="trailing" secondItem="z3H-cE-tdV" secondAttribute="trailing" id="kAk-q8-Yy9"/>
                             <constraint firstItem="ULL-Zn-enT" firstAttribute="top" secondItem="FgI-EJ-ihh" secondAttribute="bottom" constant="70" id="mEk-QF-BKU"/>
@@ -389,11 +393,11 @@
                         <viewControllerLayoutGuide type="bottom" id="W8j-eV-65j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nQz-Bj-eXy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-oV-6Tl" customClass="ARSCNView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -434,6 +438,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="text1" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-rI-gJ0">
+                                            <rect key="frame" x="6" y="5.5" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Lmc-rI-gJ0" secondAttribute="height" multiplier="1:1" id="qkG-Ld-fsa"/>
+                                                <constraint firstAttribute="height" constant="65" id="zP3-z1-idI"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="selector_icon" translatesAutoresizingMaskIntoConstraints="NO" id="zLn-ws-Prz">
                                             <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
                                         </imageView>
@@ -441,11 +452,16 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Lmc-rI-gJ0" firstAttribute="centerY" secondItem="1nF-Df-wiY" secondAttribute="centerY" id="Fwt-aV-p09"/>
                                     <constraint firstAttribute="trailing" secondItem="zLn-ws-Prz" secondAttribute="trailing" id="GgR-or-E27"/>
                                     <constraint firstAttribute="bottom" secondItem="zLn-ws-Prz" secondAttribute="bottom" id="RRI-kR-0Sd"/>
+                                    <constraint firstItem="Lmc-rI-gJ0" firstAttribute="centerX" secondItem="1nF-Df-wiY" secondAttribute="centerX" id="RUr-RJ-B3q"/>
                                     <constraint firstItem="zLn-ws-Prz" firstAttribute="leading" secondItem="1nF-Df-wiY" secondAttribute="leading" id="Yg7-UP-YHl"/>
                                     <constraint firstItem="zLn-ws-Prz" firstAttribute="top" secondItem="1nF-Df-wiY" secondAttribute="top" id="eEX-JX-aJo"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="Lmc-rI-gJ0" id="qRc-4D-LBK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -457,7 +473,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2P-jM-VTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1910" y="-919"/>
+            <point key="canvasLocation" x="-1911.2" y="-919.79010494752629"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="9zr-wy-tjF">
@@ -471,7 +487,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="24d-eq-kTT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="24d-eq-kTT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -521,15 +537,15 @@
                                     <constraint firstAttribute="width" constant="40" id="ioW-io-yJp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <state key="normal" title="👋">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="K">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="dHy-K6-gE9" kind="unwind" unwindAction="unwindFromPhoto:" id="yzL-gL-9l2"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Lpv-hu-2Iw" secondAttribute="bottom" constant="12" id="1xJ-qj-5WQ"/>
@@ -559,5 +575,6 @@
     <resources>
         <image name="selector" width="77" height="77"/>
         <image name="selector_icon" width="77" height="77"/>
+        <image name="text1" width="488" height="488"/>
     </resources>
 </document>

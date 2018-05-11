@@ -11,6 +11,11 @@ import PureLayout
 
 extension UIView {
 
+  func roundCorners33() {
+    layer.cornerRadius = 33
+    clipsToBounds = true
+  }
+  
   func roundCorners22() {
     layer.cornerRadius = 22
     clipsToBounds = true
@@ -31,8 +36,8 @@ extension UIView {
     clipsToBounds = true
   }
   
-  func roundCorners3() {
-    layer.cornerRadius = 3
+  func roundCorners2() {
+    layer.cornerRadius = 2
     clipsToBounds = true
   }
   

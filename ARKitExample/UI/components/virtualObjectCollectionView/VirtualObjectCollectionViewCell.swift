@@ -20,6 +20,8 @@ class VirtualObjectCollectionViewCell: UICollectionViewCell {
       return super.apply(layoutAttributes)
     }
     
+    imageView.roundCorners33()
+    
     if !lastSize.equalTo(layoutAttributes.size) {
       lastSize = layoutAttributes.size
       

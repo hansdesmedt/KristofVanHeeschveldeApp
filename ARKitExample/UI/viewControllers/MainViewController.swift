@@ -13,7 +13,8 @@ import RxCocoa
 class MainViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
-  private var ARViewController: ARViewController?
+  private var arViewController: ARViewController?
+  private var collectionViewController: VirtualObjectCollectionViewController?
   private let blackView = BlackView(frame: CGRect.zero)
   
   @IBOutlet var aboutView: AboutView!
@@ -28,16 +29,9 @@ class MainViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? ARViewController {
-      self.ARViewController = viewController
-    } else if let collectionViewController = segue.destination as? VirtualObjectCollectionViewController {
-      collectionViewController.takeScreenshot.subscribe(onNext: { _ in
-        if let photoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController, let ARViewController = self.ARViewController {
-          photoViewController.image = ARViewController.snapshot
-          photoViewController.modalTransitionStyle = .crossDissolve
-          self.present(photoViewController, animated: true, completion: nil)
-        }
-        
-      }).disposed(by: disposeBag)
+      self.arViewController = viewController
+    } else if let viewController = segue.destination as? VirtualObjectCollectionViewController {
+      self.collectionViewController = viewController
     }
   }
   
@@ -49,10 +43,32 @@ class MainViewController: UIViewController {
     bind(remainingTimeButton, remainingTimeView)
     bind(totalSubmitsButton, totalSubmitsView)
     
+    collectionViewController?.loadVirtualObject
+      .subscribe(onNext: { [weak self] (id) in
+        self?.arViewController?.loadVirtualObject(at: id)
+      })
+      .disposed(by: disposeBag)
+    
+    collectionViewController?.takeScreenshot
+      .subscribe(onNext: { [weak self]_ in
+        if let arViewController = self?.arViewController {
+          self?.loadImage(image: arViewController.snapshot)
+        }
+      })
+      .disposed(by: disposeBag)
+    
     FirebaseDatabase.sharedInstance.numberInstalled
       .map({ (number) -> NSAttributedString in return NSAttributedString(string: "APP: \(number)/100")})
       .bind(to: appNumberButton.rx.attributedTitle())
       .disposed(by: disposeBag)
+  }
+  
+  private func loadImage(image: UIImage) {
+    if let photoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
+      photoViewController.image = image
+      photoViewController.modalTransitionStyle = .crossDissolve
+      self.present(photoViewController, animated: true, completion: nil)
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +79,7 @@ class MainViewController: UIViewController {
       defaults.set(true, for: .firstRunCompleted)
       aboutView.toggle(superView: view, x: -155, y: -285)
     } else {
-      ARViewController?.restartPlaneDetection()
+      arViewController?.restartPlaneDetection()
     }
   }
   

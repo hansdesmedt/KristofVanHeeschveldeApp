@@ -18,7 +18,7 @@ class VirtualObjectCollectionViewFlowLayoutHorizontal: VirtualObjectCollectionVi
     
     override var itemSize: CGSize {
         guard let frame = frame else { return CGSize.zero }
-        let height = frame.height * 0.9
+        let height = frame.height
         return CGSize(width: height * itemAspectRatio, height: height)
     }
     

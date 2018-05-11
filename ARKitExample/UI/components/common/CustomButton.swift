@@ -13,6 +13,6 @@ class CustomButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     backgroundColor = UIColor.white.withAlphaComponent(0.3)
-    roundCorners3()
+    roundCorners2()
   }
 }

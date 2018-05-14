@@ -39,13 +39,25 @@ final class FirebaseDatabase {
   func setNumberInstalled() -> Observable<UInt> {
     return login().flatMap({ _ -> Observable<UInt> in
       guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
-        return Observable.error(FirebaseDatabaseError.uuidFailed)
+        throw FirebaseDatabaseError.uuidFailed
       }
       return self.getSnapshotPath(path: "installs").map({ (snapshot) -> UInt in
         let install = snapshot.childrenCount + 1
         self.ref.child("installs/\(uuid)").setValue(install)
         return install
       })
+    })
+  }
+  
+  func setPhoto(url: String) -> Observable<Void> {
+    return login().map({ _ in
+      guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
+        throw FirebaseDatabaseError.uuidFailed
+      }
+      let photoUuid = NSUUID().uuidString
+      self.ref.child("photos/\(photoUuid)/created").setValue(Date().timeIntervalSince1970)
+      self.ref.child("photos/\(photoUuid)/url").setValue(url)
+      self.ref.child("photos/\(photoUuid)/userUUID").setValue(uuid)
     })
   }
   

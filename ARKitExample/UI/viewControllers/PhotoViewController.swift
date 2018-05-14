@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import Photos
+import Social
 
 class PhotoViewController: UIViewController {
   
+  private let disposeBag = DisposeBag()
+  
+  @IBOutlet var submitConfirmationView: SubmitConfirmationView!
+  
   @IBOutlet weak var imageView: UIImageView!
-  @IBOutlet weak var saveToDiskButton: UIButton!
   @IBOutlet weak var facebookDiskButton: UIButton!
   @IBOutlet weak var submitButton: UIButton!
   var image: UIImage?
@@ -22,45 +29,42 @@ class PhotoViewController: UIViewController {
     imageView.image = image
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  @IBAction func moreActions(_ sender: UIButton) {
+    guard let image = image else { return }
+    let share = [image, "share this on facebook", "http://google.be"] as [Any]
+    let activityViewController = UIActivityViewController(activityItems: share, applicationActivities: nil)
+    activityViewController.popoverPresentationController?.sourceView = view
+    present(activityViewController, animated: true, completion: nil)
   }
   
-  @IBAction func saveToPhotos(_ sender: UIButton) {
-    if let image = image {
-      UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-      dismiss(animated: true, completion: nil)
-    }
-  }
-  
-  @IBAction func submit(_ sender: UIButton) {
+  @IBAction func submitImage(_ sender: UIButton) {
     if let image = image, let data = UIImageJPEGRepresentation(image, 1.0) {
-      AppDelegate.cloudanary.createUploader().upload(data: data, uploadPreset: AppDelegate.uploadPreset, progress: nil) { (result, error) in
-        if let error = error {
-          print("Error uploading image %@", error)
+      submitConfirmationView.show(view: view)
+      AppDelegate.cloudanary.createUploader().upload(data: data, uploadPreset: AppDelegate.uploadPreset, progress: { [weak self] progress in
+        self?.submitConfirmationView.progress(progress)
+      }) { [weak self] (result, error) in
+        if let _ = error {
+          self?.submitConfirmationView.showError()
+        } else if let url = result?.url {
+          // save entry in firebase
+          self?.saveUrl(url: url)
+          self?.submitConfirmationView.showCompleted()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          self?.submitConfirmationView.hide()
         }
       }
     }
   }
   
+  private func saveUrl(url: String) {
+    FirebaseDatabase.sharedInstance
+      .setPhoto(url: url)
+      .subscribe()
+      .disposed(by: disposeBag)
+  }
+  
   override var prefersStatusBarHidden: Bool {
     return true
   }
-  
-  //  switch PHPhotoLibrary.authorizationStatus() {
-  //  case .authorized:
-  //  takeScreenshotBlock()
-  //  case .restricted, .denied:
-  //  let title = "Photos access denied"
-  //  let message = "Please enable Photos access for this application in Settings > Privacy to allow saving screenshots."
-  //  textManager.showAlert(title: title, message: message)
-  //  case .notDetermined:
-  //  PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
-  //  if authorizationStatus == .authorized {
-  //  takeScreenshotBlock()
-  //  }
-  //  })
-  //  }
-  
 }

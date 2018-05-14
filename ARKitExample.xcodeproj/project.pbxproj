@@ -50,6 +50,7 @@
 		CEE03E761F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */; };
 		CEEAC40F1F435CBF0086F322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */; };
 		CEF2256D1F573FBD00698C20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2256C1F573FBD00698C20 /* MainViewController.swift */; };
+		CEF370C920A8DA39000E70C2 /* SubmitConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF370C820A8DA39000E70C2 /* SubmitConfirmationView.swift */; };
 		CEF698C01F46108D0017B0E7 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF698BF1F46108D0017B0E7 /* ViewExtensions.swift */; };
 		CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */; };
 		CEFFC3C81FF424F300815984 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFC3C71FF424F300815984 /* Database.swift */; };
@@ -106,6 +107,7 @@
 		CEE03E751F39022C0051DC51 /* VirtualObjectCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		CEEAC40E1F4358EE0086F322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEF2256C1F573FBD00698C20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEF370C820A8DA39000E70C2 /* SubmitConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitConfirmationView.swift; sourceTree = "<group>"; };
 		CEF698BF1F46108D0017B0E7 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		CEFFC3C51FF3FEC400815984 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		CEFFC3C71FF424F300815984 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		CE0941AA1F4F80BD00FCB031 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CEF370C720A5E043000E70C2 /* notifications */,
 				CE6A265C20910D5C00BF9AFF /* common */,
 				CE6A265B20910D4000BF9AFF /* popups */,
 				CE0DC0261F4F770F001A0C99 /* progressView */,
@@ -316,6 +319,14 @@
 				CEDCCDA61F35FB3A00FA84DE /* VirtualObjectCollectionViewController.swift */,
 			);
 			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		CEF370C720A5E043000E70C2 /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CEF370C820A8DA39000E70C2 /* SubmitConfirmationView.swift */,
+			);
+			path = notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 				CEFFC3C61FF3FEC400815984 /* UserDefaultsExtensions.swift in Sources */,
 				CE6A266620911FC800BF9AFF /* PopupVisualEffectView.swift in Sources */,
 				CE82F6AB208FD776004F42CB /* PopupView.swift in Sources */,
+				CEF370C920A8DA39000E70C2 /* SubmitConfirmationView.swift in Sources */,
 				CE7FE6991F4DCBBF00A99882 /* AppNumberView.swift in Sources */,
 				CE88C8BC1FF3057100D285CB /* ARCameraTrackingState.swift in Sources */,
 				CE5F880A1FF3010A00A09D92 /* UICollectionViewExtensions.swift in Sources */,

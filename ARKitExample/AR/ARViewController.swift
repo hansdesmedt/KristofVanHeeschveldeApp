@@ -29,7 +29,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
   }
   
   var snapshot: UIImage {
-    return sceneView.snapshot()
+    return sceneView.snapshot!
   }
   
   override func viewDidAppear(_ animated: Bool) {

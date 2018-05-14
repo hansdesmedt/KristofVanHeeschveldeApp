@@ -69,4 +69,11 @@ extension UIView {
 
     }
   }
+  
+  var snapshot: UIImage? {
+    UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+    defer { UIGraphicsEndImageContext() }
+    drawHierarchy(in: bounds, afterScreenUpdates: true)
+    return UIGraphicsGetImageFromCurrentImageContext()
+  }
 }

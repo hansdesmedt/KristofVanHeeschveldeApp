@@ -25,6 +25,5 @@ class SubmitConfirmationView: PopupView {
   func showCompleted() {
     contentLabel.attributedText = NSAttributedString.bodyBold(string: "Ready!")
   }
-  
 }
 

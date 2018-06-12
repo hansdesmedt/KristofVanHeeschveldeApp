@@ -62,17 +62,17 @@ final class FirebaseDatabase {
     })
   }
   
-  func getLatestSubmitted() -> Observable<Date> {
-    return login().flatMap({ _ -> Observable<Date> in
+  func getLatestSubmitted() -> Observable<Date?> {
+    return login().flatMap({ _ -> Observable<Date?> in
       guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
         throw FirebaseDatabaseError.uuidFailed
       }
       return self.getObservableValue(path: "users/\(uuid)/lastSubmitted")
-        .map({ (snapshot) -> Date in
+        .map({ (snapshot) -> Date? in
           let dateFormatterGet = DateFormatter()
           dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm:ss"
           guard let latest = snapshot.value as? String, let date = dateFormatterGet.date(from: latest) else {
-            throw FirebaseDatabaseError.parsingFailed
+            return nil
           }
           return date
         })

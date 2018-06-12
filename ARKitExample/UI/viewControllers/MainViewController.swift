@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
   private var collectionViewController: VirtualObjectCollectionViewController?
   private let blackView = BlackView(frame: CGRect.zero)
   
+  @IBOutlet var notSupportedView: NotSupportedView!
   @IBOutlet var aboutView: AboutView!
   @IBOutlet var appNumberView: AppNumberView!
   @IBOutlet var remainingTimeView: RemainingTimeView!
@@ -43,6 +44,13 @@ class MainViewController: UIViewController {
     bind(remainingTimeButton, remainingTimeView)
     bind(totalSubmitsButton, totalSubmitsView)
     
+    guard let arViewController = arViewController, arViewController.isSupported else {
+      blackView.show(view: view)
+      notSupportedView.show(view: view)
+      notSupportedView.showNotSupported()
+      return
+    }
+    
     collectionViewController?.loadVirtualObject
       .subscribe(onNext: { [weak self] (id) in
         self?.arViewController?.loadVirtualObject(at: id)
@@ -58,8 +66,12 @@ class MainViewController: UIViewController {
       .disposed(by: disposeBag)
     
     FirebaseDatabase.sharedInstance.numberInstalled
-      .map({ (number) -> NSAttributedString in return NSAttributedString(string: "APP: \(number)/100")})
-      .bind(to: appNumberButton.rx.attributedTitle())
+      .do(onNext: { [weak self] (appNumber) in
+        let attributedString = NSAttributedString(string: "APP \(appNumber)/100")
+        self?.appNumberView.titleLabel.attributedText = attributedString
+        self?.appNumberButton.setAttributedTitle(attributedString, for: .normal)
+      })
+      .subscribe()
       .disposed(by: disposeBag)
     
     FirebaseDatabase.sharedInstance.getTotalSubmitted()

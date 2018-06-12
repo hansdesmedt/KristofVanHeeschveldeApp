@@ -10,9 +10,13 @@ import UIKit
 
 class RemainingTimeView: PopupView {
   
-  var latestSubmitted = Date() {
+  var latestSubmitted:Date? {
     didSet {
-      calculateRemainingTime()
+      if let _ = latestSubmitted {
+        calculateRemainingTime()
+      } else {
+        contentLabel.attributedText = NSAttributedString.body(string: "You can submit a photo, no time limit for you!")
+      }
     }
   }
   
@@ -26,6 +30,10 @@ class RemainingTimeView: PopupView {
   }
   
   func calculateRemainingTime() {
+    guard let latestSubmitted = latestSubmitted else {
+      return
+    }
+    
     let now = Date()
     let interval = now.timeIntervalSince(latestSubmitted)
     let day: TimeInterval = 24 * 60 * 60

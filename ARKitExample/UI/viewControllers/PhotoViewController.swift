@@ -13,11 +13,14 @@ import Photos
 import Social
 
 class PhotoViewController: UIViewController {
+ 
+  let canSubmit = false
   
   private let disposeBag = DisposeBag()
   private let blackView = BlackView(frame: CGRect.zero)
   
   @IBOutlet var submitConfirmationView: SubmitConfirmationView!
+  @IBOutlet var cannotSubmitView: CannotSubmitView!
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var facebookDiskButton: UIButton!
@@ -39,6 +42,14 @@ class PhotoViewController: UIViewController {
   }
   
   @IBAction func submitImage(_ sender: UIButton) {
+    guard canSubmit else {
+      cannotSubmitView.show(view: view)
+      cannotSubmitView.showMessage()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        self.cannotSubmitView.hide()
+      }
+      return
+    }
     if let image = image, let data = UIImageJPEGRepresentation(image, 1.0) {
       blackView.show(view: view)
       submitConfirmationView.show(view: view)

@@ -63,9 +63,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-go-Ul4">
-                                <rect key="frame" x="135" y="22.5" width="104" height="35"/>
+                                <rect key="frame" x="138.5" y="22.5" width="97" height="35"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
-                                <state key="normal" title="APP: #/100"/>
+                                <state key="normal" title="APP #/100"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zey-Ll-TSc" customClass="CustomButton" customModule="ARKitExample" customModuleProvider="target">
                                 <rect key="frame" x="15" y="615" width="40" height="40"/>
@@ -114,6 +114,7 @@
                         <outlet property="aboutView" destination="hGC-9n-QFu" id="3ib-RC-oDO"/>
                         <outlet property="appNumberButton" destination="OnA-go-Ul4" id="u5T-nK-anb"/>
                         <outlet property="appNumberView" destination="deE-DT-NW2" id="S1z-CC-XeX"/>
+                        <outlet property="notSupportedView" destination="OR6-Fe-p3B" id="wa5-8Y-aCv"/>
                         <outlet property="remainingTimeButton" destination="oQ5-UV-hoL" id="nhf-oJ-nCP"/>
                         <outlet property="remainingTimeView" destination="5Bq-Dz-Vlx" id="haL-kt-nkK"/>
                         <outlet property="totalSubmitsButton" destination="zey-Ll-TSc" id="dXc-3t-tdV"/>
@@ -132,14 +133,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-6x-2HQ">
-                                        <rect key="frame" x="107.5" y="25" width="85" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KRISTOF VAN HEESCHVELDE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-6x-2HQ">
+                                        <rect key="frame" x="0.0" y="25" width="300" height="56"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-Jz-Qgw" customClass="ConfirmButton" customModule="ARKitExample" customModuleProvider="target">
-                                        <rect key="frame" x="87.5" y="249" width="125" height="44"/>
+                                        <rect key="frame" x="87.5" y="277" width="125" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Bcx-j2-QX2"/>
                                             <constraint firstAttribute="width" constant="125" id="W3w-iW-Hyr"/>
@@ -150,7 +151,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-IA-C3U">
-                                        <rect key="frame" x="20" y="68" width="260" height="161"/>
+                                        <rect key="frame" x="20" y="96" width="260" height="161"/>
                                         <string key="text">Nulla condimentum velit arcu, sit amet elementum felis luctus a. Aliquam laoreet, elit et fringilla fermentum, urna sapien rhoncus leo, ut auctor nisi nunc at libero. Donec pharetra eros vitae aliquam tempor. Nullam viverra purus quis enim maximus, ac mollis lacus varius.</string>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -160,9 +161,11 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zs4-Jz-Qgw" secondAttribute="bottom" constant="25" id="2zo-Fy-qFL"/>
+                                    <constraint firstAttribute="trailing" secondItem="5cn-6x-2HQ" secondAttribute="trailing" id="3kR-fe-hl6"/>
                                     <constraint firstItem="5cn-6x-2HQ" firstAttribute="top" secondItem="Ccl-QO-LQe" secondAttribute="top" constant="25" id="8Dd-Sv-8lw"/>
                                     <constraint firstItem="8Yc-IA-C3U" firstAttribute="top" secondItem="5cn-6x-2HQ" secondAttribute="bottom" constant="15" id="FIe-sJ-8gu"/>
                                     <constraint firstItem="5cn-6x-2HQ" firstAttribute="centerX" secondItem="Ccl-QO-LQe" secondAttribute="centerX" id="Kar-UM-4Gt"/>
+                                    <constraint firstItem="5cn-6x-2HQ" firstAttribute="leading" secondItem="Ccl-QO-LQe" secondAttribute="leading" id="TXd-hF-x3L"/>
                                     <constraint firstItem="8Yc-IA-C3U" firstAttribute="leading" secondItem="Ccl-QO-LQe" secondAttribute="leading" constant="20" id="UWL-Ez-okA"/>
                                     <constraint firstAttribute="trailing" secondItem="8Yc-IA-C3U" secondAttribute="trailing" constant="20" id="aa0-wh-ZxO"/>
                                     <constraint firstItem="zs4-Jz-Qgw" firstAttribute="top" secondItem="8Yc-IA-C3U" secondAttribute="bottom" constant="20" id="ptH-qu-89H"/>
@@ -250,6 +253,7 @@
                     <connections>
                         <outlet property="contentLabel" destination="8F7-77-dL2" id="7iQ-2H-fpU"/>
                         <outlet property="okButton" destination="eP5-yx-9bo" id="qrv-BH-EHu"/>
+                        <outlet property="titleLabel" destination="MLT-4Q-d8S" id="YQ5-t1-DF3"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="5Bq-Dz-Vlx" userLabel="Remaining Time View" customClass="RemainingTimeView" customModule="ARKitExample" customModuleProvider="target">
@@ -379,6 +383,48 @@
                     <connections>
                         <outlet property="contentLabel" destination="q4v-ot-raa" id="Nsq-4f-W8Z"/>
                         <outlet property="okButton" destination="yNL-QV-Bna" id="R5s-dc-bgM"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="OR6-Fe-p3B" userLabel="Total Submits View" customClass="NotSupportedView" customModule="ARKitExample" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oX1-eS-AxH" customClass="PopupVisualEffectView" customModule="ARKitExample" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eSD-bo-Xv1">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your device is not supported, ARKit is compatible with iPhone 6S and up, or try to update your iOS." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awc-ih-f9b">
+                                        <rect key="frame" x="20" y="20" width="260" height="360"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.49565360920000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Awc-ih-f9b" secondAttribute="bottom" constant="20" id="4gv-LU-CVo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Awc-ih-f9b" secondAttribute="trailing" constant="20" id="HMf-H4-oS7"/>
+                                    <constraint firstItem="Awc-ih-f9b" firstAttribute="top" secondItem="eSD-bo-Xv1" secondAttribute="top" constant="20" id="Jol-j7-X8i"/>
+                                    <constraint firstItem="Awc-ih-f9b" firstAttribute="leading" secondItem="eSD-bo-Xv1" secondAttribute="leading" constant="20" id="mLO-pu-0K1"/>
+                                </constraints>
+                            </view>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="Qtb-sZ-hlR"/>
+                            </constraints>
+                            <blurEffect style="extraLight"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="oX1-eS-AxH" firstAttribute="top" secondItem="OR6-Fe-p3B" secondAttribute="top" id="2Nv-QK-UHb"/>
+                        <constraint firstAttribute="bottom" secondItem="oX1-eS-AxH" secondAttribute="bottom" id="cYP-5a-oen"/>
+                        <constraint firstAttribute="trailing" secondItem="oX1-eS-AxH" secondAttribute="trailing" id="clD-4U-7VQ"/>
+                        <constraint firstItem="oX1-eS-AxH" firstAttribute="leading" secondItem="OR6-Fe-p3B" secondAttribute="leading" id="oaD-9b-q9w"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="contentLabel" destination="Awc-ih-f9b" id="4Rt-ar-NqA"/>
                     </connections>
                 </view>
             </objects>
@@ -550,6 +596,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cannotSubmitView" destination="0GH-Wo-TP3" id="uVd-wu-tQf"/>
                         <outlet property="facebookDiskButton" destination="Lpv-hu-2Iw" id="ooK-w2-iuS"/>
                         <outlet property="imageView" destination="24d-eq-kTT" id="KkD-9h-lKU"/>
                         <outlet property="submitButton" destination="fav-Pp-Rvi" id="UuF-x1-4ww"/>
@@ -567,7 +614,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-bH-RU6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-bH-RU6">
                                         <rect key="frame" x="20" y="25" width="135" height="125"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -598,6 +645,49 @@
                     </constraints>
                     <connections>
                         <outlet property="contentLabel" destination="b1i-bH-RU6" id="bc6-cf-wZT"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="0GH-Wo-TP3" customClass="CannotSubmitView" customModule="ARKitExample" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gci-YS-9w4" customClass="PopupVisualEffectView" customModule="ARKitExample" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LZK-mc-9ZS">
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-EY-Z88">
+                                        <rect key="frame" x="20" y="25" width="135" height="125"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.49565360920000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IFp-EY-Z88" firstAttribute="top" secondItem="LZK-mc-9ZS" secondAttribute="top" constant="25" id="6bS-QL-DLS"/>
+                                    <constraint firstAttribute="trailing" secondItem="IFp-EY-Z88" secondAttribute="trailing" constant="20" id="Au0-xI-thy"/>
+                                    <constraint firstItem="IFp-EY-Z88" firstAttribute="leading" secondItem="LZK-mc-9ZS" secondAttribute="leading" constant="20" id="KIV-V7-Dca"/>
+                                    <constraint firstAttribute="bottom" secondItem="IFp-EY-Z88" secondAttribute="bottom" constant="25" id="xb4-9y-6ED"/>
+                                </constraints>
+                            </view>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="175" id="wMw-Dg-jm1"/>
+                            </constraints>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gci-YS-9w4" firstAttribute="top" secondItem="0GH-Wo-TP3" secondAttribute="top" id="6jY-mY-0rc"/>
+                        <constraint firstItem="gci-YS-9w4" firstAttribute="leading" secondItem="0GH-Wo-TP3" secondAttribute="leading" id="N8V-n9-W6j"/>
+                        <constraint firstAttribute="trailing" secondItem="gci-YS-9w4" secondAttribute="trailing" id="Pcd-lk-ePs"/>
+                        <constraint firstAttribute="bottom" secondItem="gci-YS-9w4" secondAttribute="bottom" id="T3S-NN-SGs"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="contentLabel" destination="IFp-EY-Z88" id="qt8-cs-cJE"/>
                     </connections>
                 </view>
                 <exit id="dHy-K6-gE9" userLabel="Exit" sceneMemberID="exit"/>

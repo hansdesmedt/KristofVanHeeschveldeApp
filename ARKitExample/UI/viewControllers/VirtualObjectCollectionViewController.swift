@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 
 class VirtualObjectCollectionViewController: UICollectionViewController {
   
+  var objectLoaded = false
   let takeScreenshot = PublishSubject<Void>()
   let loadVirtualObject = PublishSubject<Int>()
   
@@ -45,8 +46,13 @@ class VirtualObjectCollectionViewController: UICollectionViewController {
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if indexPath.item == layout?.centerItemIndex {
-      //take picture
-      takeScreenshot.onNext(())
+      if !objectLoaded {
+        loadVirtualObject.onNext(indexPath.item)
+        objectLoaded = true
+      } else {
+        takeScreenshot.onNext(())
+      }
+      
     } else {
       scrollToIndexPath(indexPath)
     }

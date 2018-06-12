@@ -32,6 +32,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
     return sceneView.snapshot!
   }
   
+  var isSupported: Bool {
+    return ARWorldTrackingConfiguration.isSupported
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
@@ -52,7 +56,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
       if use3DOFTracking {
         sessionConfig = ARWorldTrackingConfiguration()
       }
-      sessionConfig.isLightEstimationEnabled = true
+      sessionConfig.isLightEstimationEnabled = false
       session.run(sessionConfig)
     }
   }

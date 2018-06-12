@@ -9,7 +9,8 @@
 import UIKit
 
 class AppNumberView: PopupView {
-
+ 
+  @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var contentLabel: UILabel!
   
   required init?(coder aDecoder: NSCoder) {

@@ -14,6 +14,7 @@ final class FirebaseDatabase {
   
   enum FirebaseDatabaseError: Error {
     case uuidFailed
+    case parsingFailed
   }
   
   private let ref = Database.database().reference()
@@ -49,17 +50,82 @@ final class FirebaseDatabase {
     })
   }
   
-  func setPhoto(url: String) -> Observable<Void> {
-    return login().map({ _ in
+  func getTotalSubmitted() -> Observable<UInt> {
+    return login().flatMap({ _ -> Observable<UInt> in
+      return self.getObservableValue(path: "totalSubmitted")
+        .map({ (snapshot) -> UInt in
+          guard let totalSubmitted = snapshot.value as? UInt else {
+            throw FirebaseDatabaseError.parsingFailed
+          }
+          return totalSubmitted
+        })
+    })
+  }
+  
+  func getLatestSubmitted() -> Observable<Date> {
+    return login().flatMap({ _ -> Observable<Date> in
       guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
         throw FirebaseDatabaseError.uuidFailed
       }
-      let photoUuid = NSUUID().uuidString
-      self.ref.child("photos/\(photoUuid)/created").setValue(Date().timeIntervalSince1970)
-      self.ref.child("photos/\(photoUuid)/url").setValue(url)
-      self.ref.child("photos/\(photoUuid)/userUUID").setValue(uuid)
+      return self.getObservableValue(path: "users/\(uuid)/lastSubmitted")
+        .map({ (snapshot) -> Date in
+          let dateFormatterGet = DateFormatter()
+          dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm:ss"
+          guard let latest = snapshot.value as? String, let date = dateFormatterGet.date(from: latest) else {
+            throw FirebaseDatabaseError.parsingFailed
+          }
+          return date
+        })
     })
   }
+  
+  func setPhoto(url: String) -> Observable<Void> {
+    return login().flatMap({ _ -> Observable<Void>in
+      guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
+        throw FirebaseDatabaseError.uuidFailed
+      }
+      
+      let dateFormatterGet = DateFormatter()
+      dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm:ss"
+      let date = dateFormatterGet.string(from: Date())
+      
+      let photoUuid = NSUUID().uuidString
+      self.ref.child("photos/\(photoUuid)/created").setValue(date)
+      self.ref.child("photos/\(photoUuid)/url").setValue(url)
+      self.ref.child("photos/\(photoUuid)/userUUID").setValue(uuid)
+      
+      self.ref.child("users/\(uuid)/lastSubmitted").setValue(date)
+      
+      return self.getSnapshotPath(path: "users/\(uuid)/totalSubmitted")
+        .map({ (snapshot) -> Void in
+          if let totalSubmitted = snapshot.value as? UInt {
+            self.ref.child("users/\(uuid)/totalSubmitted").setValue(totalSubmitted + 1)
+          } else {
+            self.ref.child("users/\(uuid)/totalSubmitted").setValue(1)
+          }
+        })
+        .flatMap({ () -> Observable<DataSnapshot> in
+          return self.getSnapshotPath(path: "totalSubmitted")
+        })
+        .map({ (snapshot) -> Void in
+          if let totalSubmitted = snapshot.value as? UInt {
+            self.ref.child("totalSubmitted").setValue(totalSubmitted + 1)
+          } else {
+            self.ref.child("totalSubmitted").setValue(1)
+          }
+        })
+    })
+  }
+  
+//  func getLatestPhoto() -> Observable<Void> {
+//    return login().map({ _ in
+//      guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
+//        throw FirebaseDatabaseError.uuidFailed
+//      }
+//
+//      self.ref.child("photos").queryOrdered(byChild: "userUUID").qu
+//    })
+//  }
   
   var numberInstalled: Observable<UInt> {
     return login().flatMap({ _ -> Observable<UInt> in
@@ -80,6 +146,15 @@ final class FirebaseDatabase {
       self.ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
         observer.on(.next(snapshot))
         observer.on(.completed)
+      })
+      return Disposables.create()
+    }
+  }
+  
+  private func getObservableValue(path: String) -> Observable<DataSnapshot> {
+    return Observable.create { observer in
+      self.ref.child(path).observe(DataEventType.value, with: { (snapshot) in
+        observer.on(.next(snapshot))
       })
       return Disposables.create()
     }

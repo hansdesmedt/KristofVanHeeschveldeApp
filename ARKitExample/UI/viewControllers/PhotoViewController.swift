@@ -15,6 +15,7 @@ import Social
 class PhotoViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
+  private let blackView = BlackView(frame: CGRect.zero)
   
   @IBOutlet var submitConfirmationView: SubmitConfirmationView!
   
@@ -39,6 +40,7 @@ class PhotoViewController: UIViewController {
   
   @IBAction func submitImage(_ sender: UIButton) {
     if let image = image, let data = UIImageJPEGRepresentation(image, 1.0) {
+      blackView.show(view: view)
       submitConfirmationView.show(view: view)
       AppDelegate.cloudanary.createUploader().upload(data: data, uploadPreset: AppDelegate.uploadPreset, progress: { [weak self] progress in
         self?.submitConfirmationView.progress(progress)
@@ -51,6 +53,7 @@ class PhotoViewController: UIViewController {
           self?.submitConfirmationView.showCompleted()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          self?.blackView.hide()
           self?.submitConfirmationView.hide()
         }
       }

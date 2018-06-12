@@ -40,5 +40,13 @@ extension NSAttributedString {
   class func body(string: String, alignment: NSTextAlignment = .center) -> NSAttributedString {
     return NSAttributedString.attributedParagraph(forString: string, alignment: alignment, font: .body())
   }
+  
+  class func bodyBold(string: String, alignment: NSTextAlignment = .center) -> NSAttributedString {
+    return NSAttributedString.attributedParagraph(forString: string, alignment: alignment, font: .bodyBold())
+  }
+  
+  class func H1Bold(string: String, alignment: NSTextAlignment = .center) -> NSAttributedString {
+    return NSAttributedString.attributedParagraph(forString: string, alignment: alignment, font: .H1Bold())
+  }
 
 }

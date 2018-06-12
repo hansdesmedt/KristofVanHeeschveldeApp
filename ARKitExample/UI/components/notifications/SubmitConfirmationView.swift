@@ -14,16 +14,16 @@ class SubmitConfirmationView: PopupView {
   
   func progress(_ newProgress:Progress) {
     let progress = round(Float(newProgress.completedUnitCount) / Float(newProgress.totalUnitCount) * 100)
-    let confirmation = String.init(format: "%0.f%% submitted", progress)
-    contentLabel.attributedText = NSAttributedString.body(string: confirmation)
+    let confirmation = String.init(format: "%0.f%% uploaded", progress)
+    contentLabel.attributedText = NSAttributedString.bodyBold(string: confirmation)
   }
   
   func showError() {
-    contentLabel.attributedText = NSAttributedString.body(string: "Oeps something went wrong!")
+    contentLabel.attributedText = NSAttributedString.bodyBold(string: "Oeps something went wrong!")
   }
   
   func showCompleted() {
-    contentLabel.attributedText = NSAttributedString.body(string: "Completed")
+    contentLabel.attributedText = NSAttributedString.bodyBold(string: "Ready!")
   }
   
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -172,7 +172,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="wrI-li-hDS"/>
                             </constraints>
-                            <blurEffect style="light"/>
+                            <blurEffect style="extraLight"/>
                         </visualEffectView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,7 +237,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="o7C-Dv-fMS"/>
                             </constraints>
-                            <blurEffect style="light"/>
+                            <blurEffect style="extraLight"/>
                         </visualEffectView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,8 +262,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKY-fd-bcG">
-                                        <rect key="frame" x="107.5" y="25" width="85" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKY-fd-bcG">
+                                        <rect key="frame" x="53.5" y="25" width="193" height="28"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -301,7 +301,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="nrz-kt-Qwh"/>
                             </constraints>
-                            <blurEffect style="light"/>
+                            <blurEffect style="extraLight"/>
                         </visualEffectView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,8 +326,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-2a-hyt">
-                                        <rect key="frame" x="107.5" y="25" width="85" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos Uploaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-2a-hyt">
+                                        <rect key="frame" x="47" y="25" width="206" height="28"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -366,7 +366,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="hzC-7g-pcg"/>
                             </constraints>
-                            <blurEffect style="light"/>
+                            <blurEffect style="extraLight"/>
                         </visualEffectView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,7 +491,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-hu-2Iw" customClass="CustomButton" customModule="ARKitExample" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-hu-2Iw">
                                 <rect key="frame" x="15" y="615" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="JCR-ps-WhP"/>
@@ -501,8 +501,11 @@
                                 <state key="normal" title="...">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="moreActions:" destination="aUb-Xd-2AT" eventType="touchUpInside" id="HYq-wC-JrF"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fav-Pp-Rvi" customClass="CustomButton" customModule="ARKitExample" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fav-Pp-Rvi">
                                 <rect key="frame" x="320" y="615" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="D1j-Td-TA7"/>
@@ -516,13 +519,13 @@
                                     <action selector="submitImage:" destination="aUb-Xd-2AT" eventType="touchUpInside" id="77i-Mx-q0h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-RG-Jcx" customClass="CustomButton" customModule="ARKitExample" customModuleProvider="target">
-                                <rect key="frame" x="15" y="12" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-RG-Jcx">
+                                <rect key="frame" x="5" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iFp-Pd-EXa"/>
                                     <constraint firstAttribute="width" constant="40" id="ioW-io-yJp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -538,12 +541,12 @@
                             <constraint firstItem="24d-eq-kTT" firstAttribute="top" secondItem="klh-Gw-E2L" secondAttribute="top" id="5sF-cD-LJU"/>
                             <constraint firstItem="24d-eq-kTT" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" id="7Me-5L-AL6"/>
                             <constraint firstItem="Lpv-hu-2Iw" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" constant="15" id="BhT-2d-wdh"/>
-                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="top" secondItem="klh-Gw-E2L" secondAttribute="top" constant="12" id="Ghc-nU-c1L"/>
+                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="top" secondItem="klh-Gw-E2L" secondAttribute="top" constant="20" id="Ghc-nU-c1L"/>
                             <constraint firstAttribute="trailing" secondItem="24d-eq-kTT" secondAttribute="trailing" id="J1M-Lj-D6X"/>
                             <constraint firstAttribute="trailing" secondItem="fav-Pp-Rvi" secondAttribute="trailing" constant="15" id="bV4-Tx-UOE"/>
                             <constraint firstAttribute="bottom" secondItem="fav-Pp-Rvi" secondAttribute="bottom" constant="12" id="kGU-w0-sOF"/>
                             <constraint firstItem="GR9-Qj-mb5" firstAttribute="top" secondItem="24d-eq-kTT" secondAttribute="bottom" id="pnN-tP-EQj"/>
-                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" constant="15" id="qSj-w2-09f"/>
+                            <constraint firstItem="xJt-RG-Jcx" firstAttribute="leading" secondItem="klh-Gw-E2L" secondAttribute="leading" constant="5" id="qSj-w2-09f"/>
                         </constraints>
                     </view>
                     <connections>
@@ -555,18 +558,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vh-Eq-Jfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="W8q-YF-tdI" customClass="SubmitConfirmationView" customModule="ARKitExample" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-S4-WPS" customClass="PopupVisualEffectView" customModule="ARKitExample" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Iad-ub-h3d">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting to upload to Kristof Van heeschvelde submission..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-bH-RU6">
-                                        <rect key="frame" x="20" y="25" width="260" height="78"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-bH-RU6">
+                                        <rect key="frame" x="20" y="25" width="135" height="125"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -581,7 +584,7 @@
                             </view>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="300" id="0eV-ua-qnc"/>
+                                <constraint firstAttribute="width" constant="175" id="0eV-ua-qnc"/>
                             </constraints>
                             <blurEffect style="light"/>
                         </visualEffectView>

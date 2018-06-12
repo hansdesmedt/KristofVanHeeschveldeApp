@@ -61,6 +61,27 @@ class MainViewController: UIViewController {
       .map({ (number) -> NSAttributedString in return NSAttributedString(string: "APP: \(number)/100")})
       .bind(to: appNumberButton.rx.attributedTitle())
       .disposed(by: disposeBag)
+    
+    FirebaseDatabase.sharedInstance.getTotalSubmitted()
+      .do(onNext: { [weak self] (totalSubmits) in
+        self?.totalSubmitsView.totalSubmits = totalSubmits
+      })
+      .subscribe()
+      .disposed(by: disposeBag)
+    
+    FirebaseDatabase.sharedInstance.getLatestSubmitted()
+      .do(onNext: { [weak self] (date) in
+        self?.remainingTimeView.latestSubmitted = date
+      })
+      .subscribe()
+      .disposed(by: disposeBag)
+    
+    Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
+      .do(onNext: { [weak self] _ in
+        self?.remainingTimeView.calculateRemainingTime()
+      })
+      .subscribe()
+      .disposed(by: disposeBag)
   }
   
   private func loadImage(image: UIImage) {

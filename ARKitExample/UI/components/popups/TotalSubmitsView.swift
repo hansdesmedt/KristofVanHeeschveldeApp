@@ -10,6 +10,12 @@ import UIKit
 
 class TotalSubmitsView: PopupView {
   
+  var totalSubmits:UInt = 0 {
+    didSet {
+      contentLabel.attributedText = NSAttributedString.H1Bold(string: String(totalSubmits))
+    }
+  }
+  
   @IBOutlet weak var contentLabel: UILabel!
   
   required init?(coder aDecoder: NSCoder) {

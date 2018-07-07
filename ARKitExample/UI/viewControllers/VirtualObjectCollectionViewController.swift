@@ -46,13 +46,7 @@ class VirtualObjectCollectionViewController: UICollectionViewController {
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if indexPath.item == layout?.centerItemIndex {
-      if !objectLoaded {
-        loadVirtualObject.onNext(indexPath.item)
-        objectLoaded = true
-      } else {
-        takeScreenshot.onNext(())
-      }
-      
+      takeScreenshot.onNext(())
     } else {
       scrollToIndexPath(indexPath)
     }

@@ -14,7 +14,7 @@ import Social
 
 class PhotoViewController: UIViewController {
  
-  let canSubmit = false
+  var remainingTime: String? = nil
   
   private let disposeBag = DisposeBag()
   private let blackView = BlackView(frame: CGRect.zero)
@@ -42,9 +42,12 @@ class PhotoViewController: UIViewController {
   }
   
   @IBAction func submitImage(_ sender: UIButton) {
-    guard canSubmit else {
+    // TODO: has internet?
+    // TODO: double check if last submitted
+    // TODO: check total submits
+    if let time = remainingTime {
       cannotSubmitView.show(view: view)
-      cannotSubmitView.showMessage()
+      cannotSubmitView.showMessage(time: time)
       DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
         self.cannotSubmitView.hide()
       }

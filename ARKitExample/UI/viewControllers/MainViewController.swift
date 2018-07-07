@@ -51,6 +51,17 @@ class MainViewController: UIViewController {
       return
     }
     
+    // TODO: check if already appnumber else if total devices is 100 show message
+    
+    arViewController.handleError
+      .subscribe(onNext: { [weak self] (error) in
+        guard let view = self?.view, let message = error.localizedFailureReason else { return }
+        self?.blackView.show(view: view)
+        self?.notSupportedView.show(view: view)
+        self?.notSupportedView.showNoPermissions(message: message)
+      })
+      .disposed(by: disposeBag)
+    
     collectionViewController?.loadVirtualObject
       .subscribe(onNext: { [weak self] (id) in
         self?.arViewController?.loadVirtualObject(at: id)
@@ -90,7 +101,7 @@ class MainViewController: UIViewController {
     
     Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
       .do(onNext: { [weak self] _ in
-        self?.remainingTimeView.calculateRemainingTime()
+        self?.remainingTimeView.refresh()
       })
       .subscribe()
       .disposed(by: disposeBag)
@@ -98,6 +109,7 @@ class MainViewController: UIViewController {
   
   private func loadImage(image: UIImage) {
     if let photoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
+      photoViewController.remainingTime = remainingTimeView.calculateRemainingTime()
       photoViewController.image = image
       photoViewController.modalTransitionStyle = .crossDissolve
       self.present(photoViewController, animated: true, completion: nil)

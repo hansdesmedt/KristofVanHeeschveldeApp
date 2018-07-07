@@ -12,11 +12,15 @@ class RemainingTimeView: PopupView {
   
   var latestSubmitted:Date? {
     didSet {
-      if let _ = latestSubmitted {
-        calculateRemainingTime()
-      } else {
-        contentLabel.attributedText = NSAttributedString.body(string: "You can submit a photo, no time limit for you!")
-      }
+      refresh()
+    }
+  }
+  
+  func refresh() {
+    if let remainingTime = calculateRemainingTime() {
+      contentLabel.attributedText = NSAttributedString.H1Bold(string: remainingTime)
+    } else {
+      contentLabel.attributedText = NSAttributedString.body(string: "You can submit a photo, no time limit for you!")
     }
   }
   
@@ -29,9 +33,9 @@ class RemainingTimeView: PopupView {
     makeTransformations()
   }
   
-  func calculateRemainingTime() {
+  func calculateRemainingTime() -> String? {
     guard let latestSubmitted = latestSubmitted else {
-      return
+      return nil
     }
     
     let now = Date()
@@ -41,13 +45,15 @@ class RemainingTimeView: PopupView {
     
     let ti = Int(remaining)
     
+    guard ti > 0 else {
+      return nil
+    }
+    
     let seconds = ti % 60
     let minutes = (ti / 60) % 60
     let hours = (ti / 3600)
     
-    let remainingTime = String(format: "%0.2dh %0.2dm %0.2ds",hours,minutes,seconds)
-    
-    contentLabel.attributedText = NSAttributedString.H1Bold(string: remainingTime)
+    return String(format: "%0.2dh %0.2dm %0.2ds",hours,minutes,seconds)
   }
   
   override func awakeFromNib() {

@@ -10,6 +10,7 @@ import Foundation
 import SceneKit
 import UIKit
 import Photos
+import RxSwift
 
 // bij tap
 // loadVirtualObject(at: index)?
@@ -18,6 +19,8 @@ import Photos
 //restartPlaneDetection()
 
 class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
+  
+  let handleError = PublishSubject<NSError>()
   
   // MARK: - Main Setup & View Controller methods
   override func viewDidLoad() {
@@ -75,7 +78,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
     sceneView.contentScaleFactor = 1.3
     //sceneView.showsStatistics = true
     
-    enableEnvironmentMapWithIntensity(25.0)
+//    sceneView.scene.lightingEnvironment.contents = environmentMap
+//    sceneView.scene.lightingEnvironment.intensity = intensity
+    
+//    sessionConfig.isLightEstimationEnabled = false
     
     DispatchQueue.main.async {
       self.screenCenter = self.sceneView.bounds.mid
@@ -86,15 +92,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
       camera.exposureOffset = -1
       camera.minimumExposure = -1
     }
-  }
-  
-  private func enableEnvironmentMapWithIntensity(_ intensity: CGFloat) {
-    if sceneView.scene.lightingEnvironment.contents == nil {
-      if let environmentMap = UIImage(named: "Models.scnassets/sharedImages/environment_blur.exr") {
-        sceneView.scene.lightingEnvironment.contents = environmentMap
-      }
-    }
-    sceneView.scene.lightingEnvironment.intensity = intensity
+    
+    session.run(sessionConfig)
   }
   
   // MARK: - ARSCNViewDelegate
@@ -104,11 +103,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
       self.updateFocusSquare()
       
       // If light estimation is enabled, update the intensity of the model's lights and the environment map
-      if let lightEstimate = self.session.currentFrame?.lightEstimate {
-        self.enableEnvironmentMapWithIntensity(lightEstimate.ambientIntensity / 40)
-      } else {
-        self.enableEnvironmentMapWithIntensity(25)
-      }
+//      let lightEstimate = self.session.currentFrame?.lightEstimate 
     }
   }
   
@@ -162,47 +157,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIPopoverPresentati
   }
   
   func session(_ session: ARSession, didFailWithError error: Error) {
-    
-    guard let arError = error as? ARError else { return }
-    
-    let nsError = error as NSError
-    var sessionErrorMsg = "\(nsError.localizedDescription) \(nsError.localizedFailureReason ?? "")"
-    if let recoveryOptions = nsError.localizedRecoveryOptions {
-      for option in recoveryOptions {
-        sessionErrorMsg.append("\(option).")
-      }
-    }
-    
-    let isRecoverable = (arError.code == .worldTrackingFailed)
-    if isRecoverable {
-      sessionErrorMsg += "\nYou can try resetting the session or quit the application."
-    } else {
-      sessionErrorMsg += "\nThis is an unrecoverable error that requires to quit the application."
-    }
+    handleError.onNext(error as NSError)
   }
   
   func sessionInterruptionEnded(_ session: ARSession) {
     session.run(sessionConfig, options: [.resetTracking, .removeExistingAnchors])
     restartExperience()
-  }
-  
-  // MARK: - Ambient Light Estimation
-  
-  private func toggleAmbientLightEstimation(_ enabled: Bool) {
-    
-    if enabled {
-      if !sessionConfig.isLightEstimationEnabled {
-        // turn on light estimation
-        sessionConfig.isLightEstimationEnabled = true
-        session.run(sessionConfig)
-      }
-    } else {
-      if sessionConfig.isLightEstimationEnabled {
-        // turn off light estimation
-        sessionConfig.isLightEstimationEnabled = false
-        session.run(sessionConfig)
-      }
-    }
   }
   
   // MARK: - Gesture Recognizers

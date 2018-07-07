@@ -12,7 +12,7 @@ class CannotSubmitView: PopupView {
 
   @IBOutlet weak var contentLabel: UILabel!
   
-  func showMessage() {
-    contentLabel.attributedText = NSAttributedString.bodyBold(string: "You have to wait 24h to submit a new photo.")
+  func showMessage(time: String) {
+    contentLabel.attributedText = NSAttributedString.bodyBold(string: "You have to wait \(time) to submit a new photo.")
   }
 }
